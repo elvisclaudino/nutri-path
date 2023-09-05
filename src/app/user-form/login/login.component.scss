@@ -1,0 +1,25 @@
+.login-form {
+  height: 94vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255, 229, 229);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 229, 229, 1) 0%,
+    rgba(255, 191, 191, 1) 100%
+  );
+
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+  }
+}
+
+@media (max-height: 700px) {
+  .login-form {
+    height: 500px;
+  }
+}
