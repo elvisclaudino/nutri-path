@@ -1,3 +1,23 @@
+// Variables
+$font: "Roboto", sans-serif;
+$primary: #a8df8e;
+$secondary: #f3fde8;
+$tertiary: #ffe5e5;
+$quarternary: #ffbfbf;
+
+$textBlack: #1b1b1b;
+$textWhite: #ffffff;
+
+// Reset SCSS
+@import "reset-scss/reset.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
+  color: $textBlack;
+}
+
 // Font Awesome
 @import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
