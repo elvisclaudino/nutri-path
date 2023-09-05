@@ -38,18 +38,20 @@
 
       <div class="d-flex align-items-center">
         <button
-          *ngIf="shouldShowLoginButton('/login')"
+          *ngIf="shouldShowLoginButton('/home/login')"
           type="button"
           class="btn btn-link px-3 me-2"
+          [routerLink]="['home/login']"
         >
           Login
         </button>
         <button
-          *ngIf="shouldShowLoginButton('/register')"
+          *ngIf="shouldShowLoginButton('/home/register')"
           type="button"
           class="btn btn-primary me-3"
+          [routerLink]="['home/register']"
         >
-          Sign up for free
+          Registre-se
         </button>
       </div>
     </div>
