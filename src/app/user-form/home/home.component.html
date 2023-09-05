@@ -1,16 +1,25 @@
 <main
   class="home-form d-flex justify-content-center align-items-center flex-column"
 >
-  <h1>NutriPath</h1>
-  <div class="d-flex align-items-center">
+  <img
+    class="img-fluid logo-marca"
+    [src]="'../../../assets/img/logo-marca.png'"
+    alt="logo-marca nutri path"
+  />
+
+  <div class="d-grid gap-2 d-md-block">
     <button
       type="button"
-      class="btn btn-outline-black px-3 me-2"
+      class="btn btn-lg btn-outline-black"
       [routerLink]="['login']"
     >
       Login
     </button>
-    <button type="button" class="btn btn-white" [routerLink]="['register']">
+    <button
+      type="button"
+      class="btn btn-lg btn-white"
+      [routerLink]="['register']"
+    >
       Cadastre-se
     </button>
   </div>

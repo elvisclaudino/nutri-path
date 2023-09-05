@@ -1,12 +1,4 @@
-// Variables
-$font: "Roboto", sans-serif;
-$primary: #a8df8e;
-$secondary: #f3fde8;
-$tertiary: #ffe5e5;
-$quarternary: #ffbfbf;
-
-$textBlack: #1b1b1b;
-$textWhite: #ffffff;
+@import "./vars.scss";
 
 // Reset SCSS
 @import "reset-scss/reset.scss";

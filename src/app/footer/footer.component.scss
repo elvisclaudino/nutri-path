@@ -1,0 +1,9 @@
+@import "../../vars.scss";
+
+.footer-infos {
+  hr {
+    width: 100px;
+    color: $primary;
+    border: 1px solid $primary;
+  }
+}
