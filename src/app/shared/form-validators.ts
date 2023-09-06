@@ -26,24 +26,36 @@ export class FormValidators {
       if (otherField == null) {
         throw new Error('É necessário informar um campo.');
       }
-
       if (!control.root || !(<FormGroup>control.root).controls) {
         return null;
       }
-
       const field = (<FormGroup>control.root).get(otherField);
-
       if (!field) {
         throw new Error('É necessário informar um campo válido.');
       }
-
       if (field.value !== control.value) {
         return { equalsTo: otherField };
       }
-
       return null;
     };
 
     return validator;
+  }
+
+  static getErrorMsg(
+    fieldName: string,
+    validatorName: string,
+    validatorValue: any
+  ) {
+    const config: any = {
+      required: `${fieldName} é obrigatório.`,
+      email: 'Email inválido.',
+      invalidPassword:
+        'Sua senha deve conter letras maiscúlas, letras minúsculas, números e caracteres especiais',
+      equalsTo: `As senhas não coincidem.`,
+      min: `${fieldName} não tem o valor mínimo.`,
+      invalidCep: 'CEP inválido.',
+    };
+    return config[validatorName];
   }
 }

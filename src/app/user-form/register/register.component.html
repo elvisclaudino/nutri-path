@@ -14,11 +14,15 @@
             <input
               type="text"
               id="name"
-              class="form-control form-control-lg is-invalid"
+              class="form-control form-control-lg"
               formControlName="name"
             />
             <label class="form-label" for="name">Nome</label>
-            <div class="invalid-feedback">Please choose a username.</div>
+
+            <app-error-msg
+              [control]="$any(form.get('name'))"
+              label="Nome"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -31,6 +35,11 @@
               formControlName="lastName"
             />
             <label class="form-label" for="lastName">Sobrenome</label>
+
+            <app-error-msg
+              [control]="$any(form.get('lastName'))"
+              label="Sobrenome"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -44,6 +53,10 @@
               formControlName="email"
             />
             <label class="form-label" for="email">Email</label>
+            <app-error-msg
+              [control]="$any(form.get('email'))"
+              label="Email"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -56,6 +69,10 @@
               formControlName="password"
             />
             <label class="form-label" for="password">Senha</label>
+            <app-error-msg
+              [control]="$any(form.get('password'))"
+              label="Senha"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -70,6 +87,10 @@
             <label class="form-label" for="confirmPassword"
               >Confirmar senha</label
             >
+            <app-error-msg
+              [control]="$any(form.get('confirmPassword'))"
+              label="Confirmar senha"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -82,6 +103,10 @@
               formControlName="age"
             />
             <label class="form-label" for="age">Idade</label>
+            <app-error-msg
+              [control]="$any(form.get('age'))"
+              label="Idade"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -94,7 +119,11 @@
               placeholder="KG"
               formControlName="weigth"
             />
-            <label class="form-label" for="weigth">Peso</label>
+            <label class="form-label" for="weigth">Peso em KG</label>
+            <app-error-msg
+              [control]="$any(form.get('weigth'))"
+              label="Peso"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -107,7 +136,11 @@
               placeholder="CM"
               formControlName="heigth"
             />
-            <label class="form-label" for="heigth">Altura</label>
+            <label class="form-label" for="heigth">Altura em CM</label>
+            <app-error-msg
+              [control]="$any(form.get('heigth'))"
+              label="Altura"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -121,6 +154,10 @@
               formControlName="cep"
             />
             <label class="form-label" for="cep">CEP</label>
+            <app-error-msg
+              [control]="$any(form.get('cep'))"
+              label="Cep"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -140,6 +177,10 @@
             <label *ngIf="stateRef.value === ''" class="form-label" for="state"
               >Estado</label
             >
+            <app-error-msg
+              [control]="$any(form.get('state'))"
+              label="Estado"
+            ></app-error-msg>
           </div>
         </div>
 
@@ -159,6 +200,10 @@
             <label *ngIf="citiesRef.value === ''" class="form-label" for="city"
               >Cidade</label
             >
+            <app-error-msg
+              [control]="$any(form.get('city'))"
+              label="Cidade"
+            ></app-error-msg>
           </div>
         </div>
       </div>

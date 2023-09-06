@@ -76,4 +76,12 @@ export class RegisterComponent {
       city: data.localidade,
     });
   }
+
+  aplicaCssErro(campo: string) {
+    return {
+      'is-valid': this.form.get(campo)?.valid && this.form.get(campo)?.touched,
+      'is-invalid':
+        !this.form.get(campo)?.valid && this.form.get(campo)?.touched,
+    };
+  }
 }
