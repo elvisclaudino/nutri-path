@@ -1,5 +1,5 @@
 <div class="register-form d-flex justify-content-center align-items-center">
-  <form class="cold-md-10 p-5 bg-white rounded-6 w-50">
+  <form class="cold-md-10 p-5 bg-white rounded-6 w-50" [formGroup]="form">
     <a [routerLink]="'/'" class="d-flex justify-content-center">
       <img
         class="img-fluid w-50 center"
@@ -7,96 +7,159 @@
         alt="logo nutri path"
       />
     </a>
-
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="name" class="form-control form-control-lg" />
-          <label class="form-label" for="name">Nome</label>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="name"
+              class="form-control form-control-lg is-invalid"
+              formControlName="name"
+            />
+            <label class="form-label" for="name">Nome</label>
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input
-            type="text"
-            id="lastName"
-            class="form-control form-control-lg"
-          />
-          <label class="form-label" for="lastName">Sobrenome</label>
+        <div class="col-md-6 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="lastName"
+              class="form-control form-control-lg"
+              formControlName="lastName"
+            />
+            <label class="form-label" for="lastName">Sobrenome</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-12 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="email" id="email" class="form-control form-control-lg" />
-          <label class="form-label" for="email">Email</label>
+        <div class="col-md-12 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="email"
+              id="email"
+              class="form-control form-control-lg"
+              placeholder="email@email.com"
+              formControlName="email"
+            />
+            <label class="form-label" for="email">Email</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input
-            type="password"
-            id="password"
-            class="form-control form-control-lg"
-          />
-          <label class="form-label" for="password">Senha</label>
+        <div class="col-md-6 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="password"
+              id="password"
+              class="form-control form-control-lg"
+              formControlName="password"
+            />
+            <label class="form-label" for="password">Senha</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-6 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input
-            type="password"
-            id="confirmPassword"
-            class="form-control form-control-lg"
-          />
-          <label class="form-label" for="confirmPassword"
-            >Confirmar senha</label
-          >
+        <div class="col-md-6 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control form-control-lg"
+              formControlName="confirmPassword"
+            />
+            <label class="form-label" for="confirmPassword"
+              >Confirmar senha</label
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="age" class="form-control form-control-lg" />
-          <label class="form-label" for="age">Idade</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="age"
+              class="form-control form-control-lg"
+              formControlName="age"
+            />
+            <label class="form-label" for="age">Idade</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="weigth" class="form-control form-control-lg" />
-          <label class="form-label" for="weigth">Peso</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="weigth"
+              class="form-control form-control-lg"
+              placeholder="KG"
+              formControlName="weigth"
+            />
+            <label class="form-label" for="weigth">Peso</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="heigth" class="form-control form-control-lg" />
-          <label class="form-label" for="heigth">Altura</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="heigth"
+              class="form-control form-control-lg"
+              placeholder="CM"
+              formControlName="heigth"
+            />
+            <label class="form-label" for="heigth">Altura</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="cep" class="form-control form-control-lg" />
-          <label class="form-label" for="cep">CEP</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <input
+              type="text"
+              id="cep"
+              class="form-control form-control-lg"
+              placeholder="00000-000"
+              formControlName="cep"
+            />
+            <label class="form-label" for="cep">CEP</label>
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="state" class="form-control form-control-lg" />
-          <label class="form-label" for="state">Estado</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <select
+              type="text"
+              id="state"
+              class="form-control form-control-lg"
+              formControlName="state"
+              #stateRef
+            >
+              <option *ngFor="let state of states" [value]="state.sigla">
+                {{ state.nome }}
+              </option>
+            </select>
+            <label *ngIf="stateRef.value === ''" class="form-label" for="state"
+              >Estado</label
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="col-md-4 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="text" id="city" class="form-control form-control-lg" />
-          <label class="form-label" for="city">Cidade</label>
+        <div class="col-md-4 mb-4">
+          <div class="form-outline bg-secondary rounded-6">
+            <select
+              type="text"
+              id="city"
+              class="form-control form-control-lg"
+              formControlName="city"
+              #citiesRef
+            >
+              <option *ngFor="let city of cities" [value]="city.nome">
+                {{ city.nome }}
+              </option>
+            </select>
+            <label *ngIf="citiesRef.value === ''" class="form-label" for="city"
+              >Cidade</label
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -105,4 +168,6 @@
       Cadastrar
     </button>
   </form>
+
+  <app-form-debug [form]="form"></app-form-debug>
 </div>
