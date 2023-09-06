@@ -21,13 +21,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarButtonsExample">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" [routerLink]="['/']">Home</a>
         </li>
       </ul>
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-center">
         <button
           *ngIf="shouldShowLoginButton('/home/login')"
           type="button"
