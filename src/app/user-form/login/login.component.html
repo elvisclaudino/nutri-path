@@ -1,5 +1,5 @@
 <div class="login-form d-flex justify-content-center align-items-center">
-  <form class="cold-md-10 p-5 bg-white rounded-6 w-25">
+  <form class="cold-md-10 p-5 bg-white rounded-6" [formGroup]="form">
     <a [routerLink]="'/'" class="d-flex justify-content-center mb-4">
       <img
         class="img-fluid w-50 center"
@@ -9,21 +9,29 @@
     </a>
 
     <div class="row">
-      <div class="col-md-12 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="email" id="email" class="form-control" />
-          <label class="form-label" for="email">Email</label>
-        </div>
+      <div class="col-md-12 mb-4 p-0">
+        <app-input-field
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+          [control]="$any(form.get('email'))"
+          label="Email"
+        ></app-input-field>
       </div>
 
-      <div class="col-md-12 mb-4">
-        <div class="form-outline bg-secondary rounded-6">
-          <input type="password" id="senha" class="form-control" />
-          <label class="form-label" for="senha">Senha</label>
-        </div>
+      <div class="col-md-12 mb-4 p-0">
+        <app-input-field
+          id="password"
+          placeholder="Senha"
+          formControlName="password"
+          [control]="$any(form.get('password'))"
+          label="Senha"
+        ></app-input-field>
       </div>
 
       <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+      <app-form-debug [form]="form"></app-form-debug>
     </div>
   </form>
 </div>
