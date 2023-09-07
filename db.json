@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Elvis",
+      "sobrenome": "Claudino",
+      "email": "elvis@email.com",
+      "senha": "Senha@@123",
+      "idade": 19,
+      "peso": 74,
+      "altura": 180,
+      "cep": "83190-000",
+      "estado": "PR",
+      "cidade": "Tijucas do Sul"
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Claudino",
+      "email": "elvis2@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "20",
+      "weigth": "20",
+      "heigth": "40",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 2
+    }
+  ],
+  "dieta": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "alimentos": [
+        {
+          "id": 1,
+          "tipo": "Café da manhã",
+          "alimento": "Arroz",
+          "quantidade": "100g",
+          "calorias": 130
+        }
+      ]
+    }
+  ]
+}

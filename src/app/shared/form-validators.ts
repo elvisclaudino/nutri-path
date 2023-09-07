@@ -1,0 +1,62 @@
+import { FormControl, FormGroup } from '@angular/forms';
+
+export class FormValidators {
+  static cepValidator(control: FormControl) {
+    const cep = control.value;
+    if (cep && cep !== '') {
+      const cepPattern = /^\d{5}-\d{3}$/;
+      return cepPattern.test(cep) ? null : { invalidCep: true };
+    }
+
+    return null;
+  }
+
+  static passwordValidator(control: FormControl) {
+    const password = control.value;
+    if (password && password !== '') {
+      const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+      return passwordPattern.test(password) ? null : { invalidPassword: true };
+    }
+
+    return null;
+  }
+
+  static equalsTo(otherField: string) {
+    const validator = (control: FormControl) => {
+      if (otherField == null) {
+        throw new Error('É necessário informar um campo.');
+      }
+      if (!control.root || !(<FormGroup>control.root).controls) {
+        return null;
+      }
+      const field = (<FormGroup>control.root).get(otherField);
+      if (!field) {
+        throw new Error('É necessário informar um campo válido.');
+      }
+      if (field.value !== control.value) {
+        return { equalsTo: otherField };
+      }
+      return null;
+    };
+
+    return validator;
+  }
+
+  static getErrorMsg(
+    fieldName: string,
+    validatorName: string,
+    validatorValue: any
+  ) {
+    const config: any = {
+      required: `${fieldName} é obrigatório.`,
+      email: 'Email inválido.',
+      invalidPassword:
+        'Sua senha deve conter letras maiscúlas, letras minúsculas, números e caracteres especiais',
+      equalsTo: `As senhas não coincidem.`,
+      min: `${fieldName} não tem o valor mínimo.`,
+      invalidCep: 'CEP inválido.',
+      emailExists: 'Email já cadastrado.',
+    };
+    return config[validatorName];
+  }
+}

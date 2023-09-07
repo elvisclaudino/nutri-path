@@ -1,0 +1,12 @@
+<div class="bg-secondary rounded-6">
+  <input
+    [type]="type"
+    class="form-control form-control-lg"
+    [id]="id"
+    [placeholder]="placeholder"
+    [readonly]="!!isReadOnly"
+    [(ngModel)]="value"
+  />
+
+  <app-error-msg [control]="control" [label]="label"></app-error-msg>
+</div>

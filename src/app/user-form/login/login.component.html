@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="login-form d-flex justify-content-center align-items-center">
+  <form class="cold-md-10 p-5 bg-white rounded-6 w-25">
+    <a [routerLink]="'/'" class="d-flex justify-content-center mb-4">
+      <img
+        class="img-fluid w-50 center"
+        src="../../../assets/img/logo.png"
+        alt="logo nutri path"
+      />
+    </a>
+
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <div class="form-outline bg-secondary rounded-6">
+          <input type="email" id="email" class="form-control" />
+          <label class="form-label" for="email">Email</label>
+        </div>
+      </div>
+
+      <div class="col-md-12 mb-4">
+        <div class="form-outline bg-secondary rounded-6">
+          <input type="password" id="senha" class="form-control" />
+          <label class="form-label" for="senha">Senha</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </div>
+  </form>
+</div>

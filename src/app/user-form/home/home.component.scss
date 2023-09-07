@@ -1,0 +1,17 @@
+@import "../../../styles.scss";
+
+.home-form {
+  background: rgb(255, 229, 229);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 229, 229, 1) 0%,
+    rgba(255, 191, 191, 1) 100%
+  );
+  height: 94vh;
+}
+
+@media (max-height: 700px) {
+  .home-form {
+    height: 500px;
+  }
+}
