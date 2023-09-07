@@ -26,6 +26,20 @@
       "state": "PR",
       "city": "Tijucas do Sul",
       "id": 2
+    },
+    {
+      "name": "Gabriel",
+      "lastName": "Fasolim",
+      "email": "gabriel@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "18",
+      "weigth": "30",
+      "heigth": "40",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 3
     }
   ],
   "dieta": [
