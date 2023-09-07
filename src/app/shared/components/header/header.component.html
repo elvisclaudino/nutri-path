@@ -27,7 +27,10 @@
         </li>
       </ul>
 
-      <div class="d-flex align-items-center justify-content-center">
+      <div
+        *ngIf="!isLoggedIn"
+        class="d-flex align-items-center justify-content-center"
+      >
         <button
           *ngIf="shouldShowLoginButton('/home/login')"
           type="button"
@@ -43,6 +46,19 @@
           [routerLink]="['home/register']"
         >
           Registre-se
+        </button>
+      </div>
+
+      <div
+        *ngIf="isLoggedIn"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <button
+          type="button"
+          class="btn btn-primary px-3 me-2"
+          (click)="logout()"
+        >
+          Sair
         </button>
       </div>
     </div>
