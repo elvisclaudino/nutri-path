@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
 import { LoginService } from '../services/login.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ import { LoginService } from '../services/login.service';
 export class LoginComponent extends FormBaseComponent {
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private authService: AuthService
   ) {
     super();
   }
@@ -32,6 +34,7 @@ export class LoginComponent extends FormBaseComponent {
       .subscribe(
         (user) => {
           if (user) {
+            this.authService.setUserId(user.id);
             Swal.fire(
               'Login realizado!',
               `Olá ${user.name} ${user.lastName}`,
