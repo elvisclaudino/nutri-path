@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "nome": "Elvis",
-      "sobrenome": "Claudino",
-      "email": "elvis@email.com",
-      "senha": "Senha@@123",
-      "idade": 19,
-      "peso": 74,
-      "altura": 180,
-      "cep": "83190-000",
-      "estado": "PR",
-      "cidade": "Tijucas do Sul"
-    },
-    {
       "name": "Gabriel",
       "lastName": "Fasolim",
       "email": "gabriel@email.com",

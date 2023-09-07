@@ -1,5 +1,9 @@
 <div class="login-form d-flex justify-content-center align-items-center">
-  <form class="cold-md-10 p-5 bg-white rounded-6" [formGroup]="form">
+  <form
+    class="cold-md-10 p-5 bg-white rounded-6"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
     <a [routerLink]="'/'" class="d-flex justify-content-center mb-4">
       <img
         class="img-fluid w-50 center"
@@ -21,6 +25,7 @@
 
       <div class="col-md-12 mb-4 p-0">
         <app-input-field
+          type="password"
           id="password"
           placeholder="Senha"
           formControlName="password"
@@ -30,8 +35,6 @@
       </div>
 
       <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-
-      <app-form-debug [form]="form"></app-form-debug>
     </div>
   </form>
 </div>
