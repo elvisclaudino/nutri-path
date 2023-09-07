@@ -55,6 +55,7 @@ export class FormValidators {
       equalsTo: `As senhas não coincidem.`,
       min: `${fieldName} não tem o valor mínimo.`,
       invalidCep: 'CEP inválido.',
+      emailExists: 'Email já cadastrado.',
     };
     return config[validatorName];
   }

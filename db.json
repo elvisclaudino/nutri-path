@@ -12,6 +12,20 @@
       "cep": "83190-000",
       "estado": "PR",
       "cidade": "Tijucas do Sul"
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Claudino",
+      "email": "elvis2@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "20",
+      "weigth": "20",
+      "heigth": "40",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 2
     }
   ],
   "dieta": [

@@ -6,10 +6,42 @@
     rgba(255, 229, 229, 1) 0%,
     rgba(255, 191, 191, 1) 100%
   );
+
+  form {
+    width: 40%;
+  }
 }
 
 @media (max-height: 800px) {
   .register-form {
     height: 800px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .register-form {
+    form {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .register-form {
+    height: auto;
+    form {
+      width: 90%;
+      margin: 30px 0;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .register-form {
+      form {
+        width: 100%;
+        margin: 0;
+        border-radius: 0 !important;
+      }
+    }
   }
 }

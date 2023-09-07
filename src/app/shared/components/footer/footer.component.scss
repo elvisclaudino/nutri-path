@@ -7,3 +7,11 @@
     border: 1px solid $primary;
   }
 }
+
+@media (max-width: 768px) {
+  .footer-infos {
+    hr {
+      margin: 10px auto;
+    }
+  }
+}

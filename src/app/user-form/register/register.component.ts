@@ -1,7 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { distinctUntilChanged, empty, map, switchMap, tap } from 'rxjs';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import {
+  Observable,
+  distinctUntilChanged,
+  empty,
+  map,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
 
 import { FormValidators } from 'src/app/shared/form-validators';
@@ -36,7 +48,11 @@ export class RegisterComponent extends FormBaseComponent {
     this.form = this.formBuilder.group({
       name: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.email]],
+      email: [
+        null,
+        [Validators.required, Validators.email],
+        [this.verifyEmail.bind(this)],
+      ],
       password: [null, [Validators.required, FormValidators.passwordValidator]],
       confirmPassword: [null, [FormValidators.equalsTo('password')]],
 
@@ -96,5 +112,11 @@ export class RegisterComponent extends FormBaseComponent {
       state: null,
       city: null,
     });
+  }
+
+  verifyEmail(formControl: FormControl) {
+    return this.registerService
+      .verifyEmail(formControl.value)
+      .pipe(map((emailExists) => (emailExists ? { emailExists: true } : null)));
   }
 }
