@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { distinctUntilChanged, empty, map, switchMap, tap } from 'rxjs';
+import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
 
 import { FormValidators } from 'src/app/shared/form-validators';
 import { Cities } from 'src/app/shared/models/cities';
@@ -14,9 +15,7 @@ import { DropdownService } from 'src/app/shared/services/dropdown.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
-  form!: FormGroup;
-
+export class RegisterComponent extends FormBaseComponent {
   states!: States[];
   cities!: Cities[];
 
@@ -25,7 +24,9 @@ export class RegisterComponent {
     private http: HttpClient,
     private dropdownService: DropdownService,
     private cepConsultService: CepConsultService
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.dropdownService.getStates().subscribe((data) => (this.states = data));
@@ -50,7 +51,6 @@ export class RegisterComponent {
       .get('cep')
       ?.statusChanges.pipe(
         distinctUntilChanged(),
-        tap((v) => console.log('valor do cep: ', v)),
         switchMap((status) =>
           status === 'VALID'
             ? this.cepConsultService.cepConsult(this.form.get('cep')?.value)
@@ -69,6 +69,23 @@ export class RegisterComponent {
       .subscribe((data) => (this.cities = data));
   }
 
+  submit() {
+    let valueSubmit = Object.assign({}, this.form.value);
+
+    this.http
+      .post('https://httpbin.org/post', JSON.stringify(valueSubmit))
+      .pipe(map((res) => res))
+      .subscribe(
+        (dados: any) => {
+          console.log(dados);
+          // reseta o form
+          // this.formulario.reset()
+          this.resetForm();
+        },
+        (error: any) => alert(error)
+      );
+  }
+
   populateForm(data: any) {
     this.form.patchValue({
       cep: data.cep,
@@ -77,11 +94,10 @@ export class RegisterComponent {
     });
   }
 
-  aplicaCssErro(campo: string) {
-    return {
-      'is-valid': this.form.get(campo)?.valid && this.form.get(campo)?.touched,
-      'is-invalid':
-        !this.form.get(campo)?.valid && this.form.get(campo)?.touched,
-    };
+  resetForm() {
+    this.form.patchValue({
+      state: null,
+      city: null,
+    });
   }
 }

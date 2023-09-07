@@ -4,7 +4,7 @@ export class FormValidators {
   static cepValidator(control: FormControl) {
     const cep = control.value;
     if (cep && cep !== '') {
-      const cepPattern = /^[0-9]{5}[0-9]{3}$/;
+      const cepPattern = /^\d{5}-\d{3}$/;
       return cepPattern.test(cep) ? null : { invalidCep: true };
     }
 

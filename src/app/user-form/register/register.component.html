@@ -1,6 +1,10 @@
 <div class="register-form d-flex justify-content-center align-items-center">
-  <form class="cold-md-10 p-5 bg-white rounded-6 w-50" [formGroup]="form">
-    <a [routerLink]="'/'" class="d-flex justify-content-center">
+  <form
+    class="cold-md-10 p-5 bg-white rounded-6 w-25"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <a [routerLink]="'/'" class="d-flex justify-content-center mb-3">
       <img
         class="img-fluid w-50 center"
         src="../../../assets/img/logo.png"
@@ -10,161 +14,100 @@
     <div class="form-group">
       <div class="row">
         <div class="col-md-6 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="name"
-              class="form-control form-control-lg"
-              formControlName="name"
-            />
-            <label class="form-label" for="name">Nome</label>
-
-            <app-error-msg
-              [control]="$any(form.get('name'))"
-              label="Nome"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            id="name"
+            placeholder="Nome"
+            formControlName="name"
+            [control]="$any(form.get('name'))"
+            label="Nome"
+          ></app-input-field>
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="lastName"
-              class="form-control form-control-lg"
-              formControlName="lastName"
-            />
-            <label class="form-label" for="lastName">Sobrenome</label>
-
-            <app-error-msg
-              [control]="$any(form.get('lastName'))"
-              label="Sobrenome"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            id="lastName"
+            placeholder="Sobrenome"
+            formControlName="lastName"
+            [control]="$any(form.get('lastName'))"
+            label="Sobrenome"
+          ></app-input-field>
         </div>
 
         <div class="col-md-12 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="email"
-              id="email"
-              class="form-control form-control-lg"
-              placeholder="email@email.com"
-              formControlName="email"
-            />
-            <label class="form-label" for="email">Email</label>
-            <app-error-msg
-              [control]="$any(form.get('email'))"
-              label="Email"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            id="email"
+            placeholder="Email"
+            formControlName="email"
+            [control]="$any(form.get('email'))"
+            label="Email"
+          ></app-input-field>
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="password"
-              id="password"
-              class="form-control form-control-lg"
-              formControlName="password"
-            />
-            <label class="form-label" for="password">Senha</label>
-            <app-error-msg
-              [control]="$any(form.get('password'))"
-              label="Senha"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            type="password"
+            id="password"
+            placeholder="Senha"
+            formControlName="password"
+            [control]="$any(form.get('password'))"
+            label="Senha"
+          ></app-input-field>
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="password"
-              id="confirmPassword"
-              class="form-control form-control-lg"
-              formControlName="confirmPassword"
-            />
-            <label class="form-label" for="confirmPassword"
-              >Confirmar senha</label
-            >
-            <app-error-msg
-              [control]="$any(form.get('confirmPassword'))"
-              label="Confirmar senha"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirmar senha"
+            formControlName="confirmPassword"
+            [control]="$any(form.get('confirmPassword'))"
+            label="Confirmar senha"
+          ></app-input-field>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="age"
-              class="form-control form-control-lg"
-              formControlName="age"
-            />
-            <label class="form-label" for="age">Idade</label>
-            <app-error-msg
-              [control]="$any(form.get('age'))"
-              label="Idade"
-            ></app-error-msg>
-          </div>
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="age"
+            placeholder="Idade"
+            formControlName="age"
+            [control]="$any(form.get('age'))"
+            label="Idade"
+          ></app-input-field>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="weigth"
-              class="form-control form-control-lg"
-              placeholder="KG"
-              formControlName="weigth"
-            />
-            <label class="form-label" for="weigth">Peso em KG</label>
-            <app-error-msg
-              [control]="$any(form.get('weigth'))"
-              label="Peso"
-            ></app-error-msg>
-          </div>
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="weigth"
+            placeholder="Peso em KG"
+            formControlName="weigth"
+            [control]="$any(form.get('weigth'))"
+            label="Peso"
+          ></app-input-field>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="heigth"
-              class="form-control form-control-lg"
-              placeholder="CM"
-              formControlName="heigth"
-            />
-            <label class="form-label" for="heigth">Altura em CM</label>
-            <app-error-msg
-              [control]="$any(form.get('heigth'))"
-              label="Altura"
-            ></app-error-msg>
-          </div>
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="heigth"
+            placeholder="Altura em CM"
+            formControlName="heigth"
+            [control]="$any(form.get('heigth'))"
+            label="Altura"
+          ></app-input-field>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
-            <input
-              type="text"
-              id="cep"
-              class="form-control form-control-lg"
-              placeholder="00000-000"
-              formControlName="cep"
-            />
-            <label class="form-label" for="cep">CEP</label>
-            <app-error-msg
-              [control]="$any(form.get('cep'))"
-              label="Cep"
-            ></app-error-msg>
-          </div>
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="cep"
+            placeholder="CEP"
+            formControlName="cep"
+            [control]="$any(form.get('cep'))"
+            label="Cep"
+          ></app-input-field>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
+        <div class="col-md-6 mb-4">
+          <div class="form-outline border rounded-2">
             <select
-              type="text"
               id="state"
               class="form-control form-control-lg"
               formControlName="state"
@@ -177,6 +120,7 @@
             <label *ngIf="stateRef.value === ''" class="form-label" for="state"
               >Estado</label
             >
+
             <app-error-msg
               [control]="$any(form.get('state'))"
               label="Estado"
@@ -184,8 +128,8 @@
           </div>
         </div>
 
-        <div class="col-md-4 mb-4">
-          <div class="form-outline bg-secondary rounded-6">
+        <div class="col-md-6 mb-4">
+          <div class="form-outline border rounded-2">
             <select
               type="text"
               id="city"
@@ -200,6 +144,7 @@
             <label *ngIf="citiesRef.value === ''" class="form-label" for="city"
               >Cidade</label
             >
+
             <app-error-msg
               [control]="$any(form.get('city'))"
               label="Cidade"

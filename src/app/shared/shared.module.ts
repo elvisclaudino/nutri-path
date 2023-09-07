@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormDebugComponent } from './components/form-debug/form-debug.component';
 import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
 import { FormBaseComponent } from './components/form-base/form-base.component';
+import { InputFieldComponent } from './components/input-field/input-field.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { FormBaseComponent } from './components/form-base/form-base.component';
     FooterComponent,
     FormDebugComponent,
     ErrorMsgComponent,
+    InputFieldComponent,
   ],
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, HttpClientModule, FormsModule],
   exports: [
     HeaderComponent,
     FooterComponent,
     FormDebugComponent,
     ErrorMsgComponent,
+    InputFieldComponent,
   ],
 })
 export class SharedModule {}

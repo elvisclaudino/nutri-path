@@ -5,7 +5,7 @@ import { UserFormRoutingModule } from './user-form-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -15,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     UserFormRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     SharedModule,
   ],
   exports: [HomeComponent, LoginComponent, RegisterComponent],
