@@ -9,6 +9,7 @@ import { Cities } from 'src/app/shared/models/cities';
 import { States } from 'src/app/shared/models/states';
 import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
 import { DropdownService } from 'src/app/shared/services/dropdown.service';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +24,8 @@ export class RegisterComponent extends FormBaseComponent {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private dropdownService: DropdownService,
-    private cepConsultService: CepConsultService
+    private cepConsultService: CepConsultService,
+    private registerService: RegisterService
   ) {
     super();
   }
@@ -70,20 +72,15 @@ export class RegisterComponent extends FormBaseComponent {
   }
 
   submit() {
-    let valueSubmit = Object.assign({}, this.form.value);
-
-    this.http
-      .post('https://httpbin.org/post', JSON.stringify(valueSubmit))
-      .pipe(map((res) => res))
-      .subscribe(
-        (dados: any) => {
-          console.log(dados);
-          // reseta o form
-          // this.formulario.reset()
-          this.resetForm();
-        },
-        (error: any) => alert(error)
-      );
+    let valueSumbit = Object.assign({}, this.form.value);
+    this.registerService.userRegister(valueSumbit).subscribe(
+      (res) => {
+        console.log('Usuário cadastrado', res);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   populateForm(data: any) {

@@ -12,7 +12,7 @@ export abstract class FormBaseComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      this.onSubmit();
+      this.submit();
     } else {
       this.verifyFormValidations(this.form);
     }

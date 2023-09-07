@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Elvis",
+      "sobrenome": "Claudino",
+      "email": "elvis@email.com",
+      "senha": "Senha@@123",
+      "idade": 19,
+      "peso": 74,
+      "altura": 180,
+      "cep": "83190-000",
+      "estado": "PR",
+      "cidade": "Tijucas do Sul"
+    }
+  ],
+  "dieta": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "alimentos": [
+        {
+          "id": 1,
+          "tipo": "Café da manhã",
+          "alimento": "Arroz",
+          "quantidade": "100g",
+          "calorias": 130
+        }
+      ]
+    }
+  ]
+}
