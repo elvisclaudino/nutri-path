@@ -1,27 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import {
-  Observable,
-  distinctUntilChanged,
-  empty,
-  map,
-  switchMap,
-  tap,
-} from 'rxjs';
-import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { distinctUntilChanged, empty, map, switchMap, delay } from 'rxjs';
+import { Router } from '@angular/router';
+
+import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
+import { DropdownService } from 'src/app/shared/services/dropdown.service';
+import { RegisterService } from '../services/register.service';
+import Swal from 'sweetalert2';
 
 import { FormValidators } from 'src/app/shared/form-validators';
 import { Cities } from 'src/app/shared/models/cities';
 import { States } from 'src/app/shared/models/states';
-import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
-import { DropdownService } from 'src/app/shared/services/dropdown.service';
-import { RegisterService } from '../services/register.service';
+
+import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
 
 @Component({
   selector: 'app-register',
@@ -34,7 +26,7 @@ export class RegisterComponent extends FormBaseComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient,
+    private router: Router,
     private dropdownService: DropdownService,
     private cepConsultService: CepConsultService,
     private registerService: RegisterService
@@ -88,13 +80,13 @@ export class RegisterComponent extends FormBaseComponent {
   }
 
   submit() {
-    let valueSumbit = Object.assign({}, this.form.value);
-    this.registerService.userRegister(valueSumbit).subscribe(
+    let valueSubmit = Object.assign({}, this.form.value);
+    this.registerService.userRegister(valueSubmit).subscribe(
       (res) => {
-        console.log('Usuário cadastrado', res);
+        Swal.fire('Conta cadastrada!', 'Realize seu login...', 'success');
       },
       (error) => {
-        console.log(error);
+        Swal.fire('Algo deu errado!', 'Tente novamente!', 'error');
       }
     );
   }

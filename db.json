@@ -1,31 +1,60 @@
 {
   "users": [
     {
-      "id": 1,
-      "nome": "Elvis",
-      "sobrenome": "Claudino",
-      "email": "elvis@email.com",
-      "senha": "Senha@@123",
-      "idade": 19,
-      "peso": 74,
-      "altura": 180,
-      "cep": "83190-000",
-      "estado": "PR",
-      "cidade": "Tijucas do Sul"
-    },
-    {
-      "name": "Elvis",
-      "lastName": "Claudino",
-      "email": "elvis2@email.com",
+      "name": "Gabriel",
+      "lastName": "Fasolim",
+      "email": "gabriel@email.com",
       "password": "El@@2019",
       "confirmPassword": "El@@2019",
-      "age": "20",
-      "weigth": "20",
+      "age": "19",
+      "weigth": "30",
       "heigth": "40",
       "cep": "83190-000",
       "state": "PR",
       "city": "Tijucas do Sul",
       "id": 2
+    },
+    {
+      "name": "Murilo",
+      "lastName": "Analiel",
+      "email": "murilo@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "24",
+      "weigth": "120",
+      "heigth": "180",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 3
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Claudino",
+      "email": "elvisclaudino6@gmail.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "20",
+      "weigth": "120",
+      "heigth": "40",
+      "cep": "82810-530",
+      "state": "PR",
+      "city": "Curitiba",
+      "id": 4
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Claudino",
+      "email": "asas@sasaas",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "19",
+      "weigth": "50",
+      "heigth": "50",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 5
     }
   ],
   "dieta": [
