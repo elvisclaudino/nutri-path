@@ -1,0 +1,31 @@
+.dashboard {
+  height: 94vh;
+  background: rgb(255, 229, 229);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 229, 229, 1) 0%,
+    rgba(255, 191, 191, 1) 100%
+  );
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  --mdb-nav-pills-link-active-bg: #ffffff;
+  --mdb-nav-pills-link-active-color: #a0d487;
+}
+
+@media (max-height: 900px) {
+  .dashboard {
+    height: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .dashboard-div {
+    width: 100%;
+  }
+}

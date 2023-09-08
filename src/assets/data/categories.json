@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nome": "Lanche" },
+  { "id": 2, "nome": "Almoço" },
+  { "id": 3, "nome": "Jantar" }
+]

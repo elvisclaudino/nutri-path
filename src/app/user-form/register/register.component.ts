@@ -1,13 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { distinctUntilChanged, empty, map, switchMap, delay } from 'rxjs';
 import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { distinctUntilChanged, empty, map, switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
 import { DropdownService } from 'src/app/shared/services/dropdown.service';
 import { RegisterService } from '../services/register.service';
-import Swal from 'sweetalert2';
 
 import { FormValidators } from 'src/app/shared/form-validators';
 import { Cities } from 'src/app/shared/models/cities';
@@ -19,6 +18,7 @@ import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent extends FormBaseComponent {
   states!: States[];
@@ -26,8 +26,8 @@ export class RegisterComponent extends FormBaseComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
     private dropdownService: DropdownService,
+    private Router: Router,
     private cepConsultService: CepConsultService,
     private registerService: RegisterService
   ) {
@@ -83,6 +83,7 @@ export class RegisterComponent extends FormBaseComponent {
     let valueSubmit = Object.assign({}, this.form.value);
     this.registerService.userRegister(valueSubmit).subscribe(
       (res) => {
+        this.Router.navigate(['home/login']);
         Swal.fire('Conta cadastrada!', 'Realize seu login...', 'success');
       },
       (error) => {

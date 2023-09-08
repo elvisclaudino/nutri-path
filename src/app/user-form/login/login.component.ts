@@ -5,7 +5,8 @@ import Swal from 'sweetalert2';
 
 import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
 import { LoginService } from '../services/login.service';
-import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent extends FormBaseComponent {
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
     private loginService: LoginService,
     private authService: AuthService
   ) {
@@ -40,6 +42,7 @@ export class LoginComponent extends FormBaseComponent {
               `Olá ${user.name} ${user.lastName}`,
               'success'
             );
+            this.router.navigate(['/dashboard']);
           } else {
             Swal.fire(
               'Erro ao fazer login!',
