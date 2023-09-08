@@ -7,3 +7,19 @@
     rgba(255, 191, 191, 1) 100%
   );
 }
+
+@media (max-height: 900px) {
+  .dashboard {
+    height: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .dashboard-div {
+    width: 100%;
+  }
+}

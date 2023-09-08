@@ -20,7 +20,6 @@ export class CategoryTableComponent {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       this.categoria = params.get('categoria') || '';
-      console.log(this.categoria);
 
       this.dietService
         .getDietSortByCategory(this.categoria)
