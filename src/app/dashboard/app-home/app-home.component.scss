@@ -8,6 +8,12 @@
   );
 }
 
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  --mdb-nav-pills-link-active-bg: #ffffff;
+  --mdb-nav-pills-link-active-color: #a0d487;
+}
+
 @media (max-height: 900px) {
   .dashboard {
     height: 900px;

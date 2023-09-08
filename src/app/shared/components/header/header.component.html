@@ -29,12 +29,12 @@
 
       <div
         *ngIf="!isLoggedIn"
-        class="d-flex align-items-center justify-content-center"
+        class="d-flex align-items-center justify-content-center gap-1"
       >
         <button
           *ngIf="shouldShowLoginButton('/home/login')"
           type="button"
-          class="btn btn-link px-3 me-2"
+          class="btn btn-link px-3"
           [routerLink]="['home/login']"
         >
           Login
@@ -42,7 +42,7 @@
         <button
           *ngIf="shouldShowLoginButton('/home/register')"
           type="button"
-          class="btn btn-primary me-3"
+          class="btn btn-primary"
           [routerLink]="['home/register']"
         >
           Registre-se
@@ -53,11 +53,7 @@
         *ngIf="isLoggedIn"
         class="d-flex align-items-center justify-content-center"
       >
-        <button
-          type="button"
-          class="btn btn-primary px-3 me-2"
-          (click)="logout()"
-        >
+        <button type="button" class="btn btn-primary px-3" (click)="logout()">
           Sair
         </button>
       </div>
