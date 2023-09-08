@@ -88,6 +88,15 @@
       "time": "12:00",
       "userId": 4,
       "id": 3
+    },
+    {
+      "name": "Arroz, feijão e frango",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Almoço",
+      "time": "12:00",
+      "userId": 4,
+      "id": 4
     }
   ]
 }
