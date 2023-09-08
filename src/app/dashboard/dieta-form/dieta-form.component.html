@@ -1,0 +1,94 @@
+<div class="dieta-form d-flex justify-content-center align-items-center">
+  <form
+    class="cold-md-10 p-5 bg-white rounded-6"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12 mb-4">
+          <app-input-field
+            id="name"
+            placeholder="Nome do alimento"
+            formControlName="name"
+            [control]="$any(form.get('name'))"
+            label="Nome"
+          ></app-input-field>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="quantity"
+            placeholder="Peso em gramas"
+            formControlName="quantity"
+            [control]="$any(form.get('quantity'))"
+            label="Quantidade"
+          ></app-input-field>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <app-input-field
+            id="kcal"
+            placeholder="Calorias"
+            formControlName="kcal"
+            [control]="$any(form.get('kcal'))"
+            label="Calorias"
+          ></app-input-field>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="form-outline border rounded-2">
+            <select
+              id="category"
+              class="form-control form-control-lg"
+              formControlName="category"
+              #categoryRef
+            >
+              <option
+                *ngFor="let category of categories"
+                [value]="category.nome"
+              >
+                {{ category.nome }}
+              </option>
+            </select>
+            <label
+              *ngIf="categoryRef.value === ''"
+              class="form-label"
+              for="category"
+              >Categoria</label
+            >
+
+            <app-error-msg
+              [control]="$any(form.get('category'))"
+              label="Categoria"
+            ></app-error-msg>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="form-outline border rounded-2">
+            <input
+              type="time"
+              id="time"
+              class="form-control form-control-lg"
+              formControlName="time"
+              #timeRef
+            />
+            <label *ngIf="timeRef.value === ''" class="form-label" for="time"
+              >Horário</label
+            >
+
+            <app-error-msg
+              [control]="$any(form.get('time'))"
+              label="Horário"
+            ></app-error-msg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+  </form>
+
+  <app-form-debug [form]="form"></app-form-debug>
+</div>

@@ -70,6 +70,24 @@
           "calorias": 130
         }
       ]
+    },
+    {
+      "name": "Arroz",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Café da manhã",
+      "time": "20:50",
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "name": "Arroz",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Almoço",
+      "time": "12:00",
+      "userId": 4,
+      "id": 3
     }
   ]
 }

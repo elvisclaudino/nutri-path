@@ -1,13 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { distinctUntilChanged, empty, map, switchMap, delay } from 'rxjs';
-import { Router } from '@angular/router';
+import { distinctUntilChanged, empty, map, switchMap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
 import { DropdownService } from 'src/app/shared/services/dropdown.service';
 import { RegisterService } from '../services/register.service';
-import Swal from 'sweetalert2';
 
 import { FormValidators } from 'src/app/shared/form-validators';
 import { Cities } from 'src/app/shared/models/cities';
@@ -26,7 +24,6 @@ export class RegisterComponent extends FormBaseComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router,
     private dropdownService: DropdownService,
     private cepConsultService: CepConsultService,
     private registerService: RegisterService
