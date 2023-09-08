@@ -66,23 +66,14 @@
         </div>
 
         <div class="col-md-6 mb-4">
-          <div class="form-outline border rounded-2">
-            <input
-              type="time"
-              id="time"
-              class="form-control form-control-lg"
-              formControlName="time"
-              #timeRef
-            />
-            <label *ngIf="timeRef.value === ''" class="form-label" for="time"
-              >Horário</label
-            >
-
-            <app-error-msg
-              [control]="$any(form.get('time'))"
-              label="Horário"
-            ></app-error-msg>
-          </div>
+          <app-input-field
+            type="time"
+            id="time"
+            placeholder="Horário"
+            formControlName="time"
+            [control]="$any(form.get('time'))"
+            label="Horário"
+          ></app-input-field>
         </div>
       </div>
     </div>

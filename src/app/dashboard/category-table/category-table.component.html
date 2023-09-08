@@ -1,4 +1,4 @@
-<div *ngIf="diet.length > 0" class="table-container">
+<div *ngIf="!emptyDiet" class="table-container">
   <table class="table bg-white rounded-6">
     <thead>
       <tr>
@@ -21,7 +21,7 @@
   </table>
 </div>
 
-<div *ngIf="diet.length === 0">
+<div *ngIf="emptyDiet">
   <p>Ainda não foi adicionado nada na dieta.</p>
   <a class="btn btn-outline" [routerLink]="['novo']">Adicione agora</a>
 </div>

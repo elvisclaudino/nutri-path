@@ -10,7 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CategoryTableComponent } from './category-table/category-table.component';
 
 @NgModule({
-  declarations: [AppHomeComponent, AppTableComponent, DietaFormComponent, CategoryTableComponent],
+  declarations: [
+    AppHomeComponent,
+    AppTableComponent,
+    DietaFormComponent,
+    CategoryTableComponent,
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,

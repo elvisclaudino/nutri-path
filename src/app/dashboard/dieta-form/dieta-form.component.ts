@@ -48,6 +48,7 @@ export class DietaFormComponent extends FormBaseComponent {
   submit() {
     this.dietService.addFoodToDiet(this.form.value).subscribe(
       (res) => {
+        this.form.reset();
         Swal.fire(
           'Alimento adicionado!',
           'Alimento adicionado a dieta!',

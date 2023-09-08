@@ -11,6 +11,7 @@ import { DietService } from '../services/diet.service';
 export class CategoryTableComponent {
   categoria!: string;
   diet!: any[];
+  emptyDiet: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,10 +24,13 @@ export class CategoryTableComponent {
 
       this.dietService
         .getDietSortByCategory(this.categoria)
-        .subscribe(
-          (diet) =>
-            (this.diet = diet.sort((a, b) => a.time.localeCompare(b.time)))
-        );
+        .subscribe((diet) => {
+          this.diet = diet.sort((a, b) => a.time.localeCompare(b.time));
+
+          if (this.diet.length === 0) {
+            this.emptyDiet = true;
+          }
+        });
     });
   }
 }
