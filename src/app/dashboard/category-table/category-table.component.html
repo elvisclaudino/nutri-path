@@ -1,0 +1,27 @@
+<div *ngIf="diet.length > 0">
+  <table class="table bg-white rounded-6">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Kcal</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Horário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let food of diet">
+        <th>{{ food.name }}</th>
+        <td>{{ food.quantity }}</td>
+        <td>{{ food.kcal }}</td>
+        <td>{{ food.category }}</td>
+        <td>{{ food.time }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="diet.length === 0">
+  <p>Ainda não foi adicionado nada na dieta.</p>
+  <a class="btn btn-outline" [routerLink]="['novo']">Adicione agora</a>
+</div>

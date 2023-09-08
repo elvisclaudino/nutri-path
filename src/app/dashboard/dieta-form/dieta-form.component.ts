@@ -7,7 +7,8 @@ import { DropdownService } from 'src/app/shared/services/dropdown.service';
 import { AuthService } from './../../shared/services/auth.service';
 
 import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
-import { DietService } from 'src/app/user-form/services/diet.service';
+
+import { DietService } from '../services/diet.service';
 
 @Component({
   selector: 'app-dieta-form',

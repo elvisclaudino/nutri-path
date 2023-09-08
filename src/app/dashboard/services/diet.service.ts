@@ -23,4 +23,14 @@ export class DietService {
       )
     );
   }
+
+  getDietSortByCategory(categoria: string): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((diet) =>
+        diet.filter((food) => {
+          return food.category === categoria;
+        })
+      )
+    );
+  }
 }

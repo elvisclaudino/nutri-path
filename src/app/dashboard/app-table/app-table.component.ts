@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DietService } from 'src/app/user-form/services/diet.service';
+import { DietService } from '../services/diet.service';
 
 @Component({
   selector: 'app-app-table',

@@ -59,44 +59,31 @@
   ],
   "dieta": [
     {
-      "id": 1,
-      "usuarioId": 1,
-      "alimentos": [
-        {
-          "id": 1,
-          "tipo": "Café da manhã",
-          "alimento": "Arroz",
-          "quantidade": "100g",
-          "calorias": 130
-        }
-      ]
+      "name": "Café",
+      "quantity": "200g",
+      "kcal": "100kcal",
+      "category": "Lanche",
+      "time": "08:30",
+      "userId": 4,
+      "id": 1
     },
     {
       "name": "Arroz",
-      "quantity": "300g",
+      "quantity": "200g",
       "kcal": "100kcal",
-      "category": "Café da manhã",
-      "time": "20:50",
+      "category": "Almoço",
+      "time": "12:00",
       "userId": 4,
       "id": 2
     },
     {
-      "name": "Arroz",
-      "quantity": "300g",
+      "name": "Pão",
+      "quantity": "200g",
       "kcal": "100kcal",
-      "category": "Almoço",
-      "time": "12:00",
+      "category": "Jantar",
+      "time": "20:00",
       "userId": 4,
       "id": 3
-    },
-    {
-      "name": "Arroz, feijão e frango",
-      "quantity": "300g",
-      "kcal": "100kcal",
-      "category": "Almoço",
-      "time": "12:00",
-      "userId": 4,
-      "id": 4
     }
   ]
 }

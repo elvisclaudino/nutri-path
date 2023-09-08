@@ -7,9 +7,10 @@ import { AppTableComponent } from './app-table/app-table.component';
 import { DietaFormComponent } from './dieta-form/dieta-form.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryTableComponent } from './category-table/category-table.component';
 
 @NgModule({
-  declarations: [AppHomeComponent, AppTableComponent, DietaFormComponent],
+  declarations: [AppHomeComponent, AppTableComponent, DietaFormComponent, CategoryTableComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
