@@ -1,4 +1,4 @@
-<div *ngIf="!emptyDiet" class="table-container">
+<div *ngIf="!emptyDiet" class="table-container rounded-6">
   <table class="table bg-white rounded-6">
     <thead>
       <tr>
@@ -7,6 +7,11 @@
         <th scope="col">Kcal</th>
         <th scope="col">Categoria</th>
         <th scope="col">Horário</th>
+        <th scope="col">
+          <a class="btn btn-primary d-flex" [routerLink]="['/dashboard/novo']"
+            ><i class="fas fa-square-plus me-1"></i> Adicionar</a
+          >
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +21,16 @@
         <td>{{ food.kcal }}</td>
         <td>{{ food.category }}</td>
         <td>{{ food.time }}</td>
+        <td>
+          <span class="d-flex">
+            <button class="btn btn-primary me-2">
+              <i class="fas fa-pen"></i>
+            </button>
+            <button class="btn btn-danger">
+              <i class="fas fa-trash-can"></i>
+            </button>
+          </span>
+        </td>
       </tr>
     </tbody>
   </table>
