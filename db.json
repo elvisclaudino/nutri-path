@@ -84,6 +84,15 @@
       "time": "20:00",
       "userId": 4,
       "id": 3
+    },
+    {
+      "name": "Elvis",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Lanche",
+      "time": "22:00",
+      "userId": 2,
+      "id": 4
     }
   ]
 }
