@@ -27,9 +27,7 @@ export class CategoryTableComponent {
         .subscribe((diet) => {
           this.diet = diet.sort((a, b) => a.time.localeCompare(b.time));
 
-          if (this.diet.length === 0) {
-            this.emptyDiet = true;
-          }
+          this.emptyDiet = this.diet.length === 0;
         });
     });
   }

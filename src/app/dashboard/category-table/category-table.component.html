@@ -1,5 +1,9 @@
-<div *ngIf="!emptyDiet" class="table-container">
-  <table class="table bg-white rounded-6">
+<div class="w-100 bg-white rounded-6 p-1 px-3 my-2">
+  <p class="m-0 fw-bolder">Categoria > {{ categoria }}</p>
+</div>
+
+<div *ngIf="!emptyDiet" class="table-container rounded-6 d-flex">
+  <table class="table bg-white rounded-6 m-0">
     <thead>
       <tr>
         <th scope="col">Nome</th>
@@ -21,7 +25,14 @@
   </table>
 </div>
 
-<div *ngIf="emptyDiet">
-  <p>Ainda não foi adicionado nada na dieta.</p>
-  <a class="btn btn-outline" [routerLink]="['novo']">Adicione agora</a>
+<div
+  class="empty-table bg-white rounded-6 d-flex align-items-center justify-content-center flex-column"
+  *ngIf="emptyDiet"
+>
+  <p class="text-center fs-3 fw-bolder m-0">
+    Ainda não foi adicionado nada na categoria {{ categoria | lowercase }}.
+  </p>
+  <a class="btn btn-primary" [routerLink]="['/dashboard/novo']"
+    >Adicione agora</a
+  >
 </div>

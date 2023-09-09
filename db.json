@@ -13,179 +13,60 @@
       "state": "PR",
       "city": "Curitiba",
       "id": 4
+    },
+    {
+      "name": "asa",
+      "lastName": "asas",
+      "email": "elvisclaudino@gmail.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "30",
+      "weigth": "650",
+      "heigth": "60",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 5
+    },
+    {
+      "name": "Joao",
+      "lastName": "Carlos",
+      "email": "joao@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "44",
+      "weigth": "3434",
+      "heigth": "150",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 6
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Csds",
+      "email": "jorge@edee",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "40",
+      "weigth": "55",
+      "heigth": "190",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 7
     }
   ],
   "dieta": [
     {
-      "name": "Café",
-      "quantity": "200g",
+      "foodId": 1,
+      "name": "a",
+      "quantity": "300g",
       "kcal": "100kcal",
-      "category": "Lanche",
-      "time": "08:30",
+      "category": "Almoço",
+      "time": "15:08",
       "userId": 4,
       "id": 1
-    },
-    {
-      "name": "Arroz",
-      "quantity": "200g",
-      "kcal": "100kcal",
-      "category": "Almoço",
-      "time": "12:00",
-      "userId": 4,
-      "id": 2
-    },
-    {
-      "name": "Pão",
-      "quantity": "200g",
-      "kcal": "100kcal",
-      "category": "Jantar",
-      "time": "20:00",
-      "userId": 4,
-      "id": 3
-    },
-    {
-      "name": "Elvis",
-      "quantity": "300g",
-      "kcal": "100kcal",
-      "category": "Lanche",
-      "time": "22:00",
-      "userId": 2,
-      "id": 4
-    },
-    {
-      "name": "2 Fatias de pão integral",
-      "quantity": "50g",
-      "kcal": "125kcal",
-      "category": "Lanche",
-      "time": "08:00",
-      "userId": 4,
-      "id": 5
-    },
-    {
-      "name": "Ovo mexido/frito (com pouco óleo)",
-      "quantity": "1Unid",
-      "kcal": "125kcal",
-      "category": "Lanche",
-      "time": "08:00",
-      "userId": 4,
-      "id": 6
-    },
-    {
-      "name": "Copo de leite",
-      "quantity": "200ml",
-      "kcal": "42kcal",
-      "category": "Lanche",
-      "time": "10:00",
-      "userId": 4,
-      "id": 7
-    },
-    {
-      "name": "folhas verdes e legumes",
-      "quantity": "À vontade",
-      "kcal": "0Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 8
-    },
-    {
-      "name": "Arroz",
-      "quantity": "45g",
-      "kcal": "58Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 9
-    },
-    {
-      "name": "Batata cozida ~ Opcional",
-      "quantity": "30g",
-      "kcal": "30Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 10
-    },
-    {
-      "name": "Feijão",
-      "quantity": "70g",
-      "kcal": "64Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 11
-    },
-    {
-      "name": "Frango grelhado",
-      "quantity": "90g/100g",
-      "kcal": "120Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 12
-    },
-    {
-      "name": "Suco natural de laranja",
-      "quantity": "200ml",
-      "kcal": "45Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 13
-    },
-    {
-      "name": "Pão integral",
-      "quantity": "2 fatias (50g)",
-      "kcal": "125Kcal",
-      "category": "Lanche",
-      "time": "15:00",
-      "userId": 4,
-      "id": 14
-    },
-    {
-      "name": "Queijo",
-      "quantity": "1 fatia (15g)",
-      "kcal": "40Kcal",
-      "category": "Lanche",
-      "time": "15:00",
-      "userId": 4,
-      "id": 15
-    },
-    {
-      "name": "Frango Grelhado",
-      "quantity": "70g",
-      "kcal": "40Kcal",
-      "category": "Lanche",
-      "time": "15:00",
-      "userId": 4,
-      "id": 16
-    },
-    {
-      "name": "Café com leite",
-      "quantity": "200ml",
-      "kcal": "80Kcal",
-      "category": "Lanche",
-      "time": "15:00",
-      "userId": 4,
-      "id": 17
-    },
-    {
-      "name": "Elvis",
-      "quantity": "300g",
-      "kcal": "100kcal",
-      "category": "Almoço",
-      "time": "03:20",
-      "userId": 4,
-      "id": 18
-    },
-    {
-      "name": "Elvis",
-      "quantity": "200g",
-      "kcal": "100kcal",
-      "category": "Lanche",
-      "time": "14:21",
-      "userId": 4,
-      "id": 19
     }
   ]
 }

@@ -1,3 +1,12 @@
+<div
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
+>
+  <p class="m-0 fw-bolder">
+    {{ showButton("/dashboard/novo") ? "Editar" : "Adicionar" }}
+  </p>
+  <a class="btn btn-white btn-sm" [routerLink]="['/dashboard']">Cancelar</a>
+</div>
+
 <div class="dieta-form d-flex justify-content-center align-items-center">
   <form
     class="cold-md-10 p-5 bg-white rounded-6"
@@ -78,6 +87,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+    <button type="submit" class="btn btn-primary btn-block">
+      {{ showButton("/dashboard/novo") ? "Editar" : "Adicionar" }}
+    </button>
   </form>
 </div>
