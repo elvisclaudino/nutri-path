@@ -55,6 +55,20 @@
       "state": "PR",
       "city": "Tijucas do Sul",
       "id": 7
+    },
+    {
+      "name": "Nilton",
+      "lastName": "Claudino",
+      "email": "nilton@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "52",
+      "weigth": "94",
+      "heigth": "171",
+      "cep": "82810-530",
+      "state": "PR",
+      "city": "Curitiba",
+      "id": 8
     }
   ],
   "dieta": [
@@ -67,6 +81,55 @@
       "time": "15:08",
       "userId": 4,
       "id": 1
+    },
+    {
+      "foodId": null,
+      "name": "Arroz",
+      "quantity": "50g",
+      "kcal": "80Kcal",
+      "category": "Almoço",
+      "time": "12:00",
+      "userId": 8,
+      "id": 2
+    },
+    {
+      "foodId": null,
+      "name": "Café",
+      "quantity": "250ml",
+      "kcal": "80kcal",
+      "category": "Manhã",
+      "time": "08:00",
+      "userId": 8,
+      "id": 3
+    },
+    {
+      "foodId": null,
+      "name": "Iogute",
+      "quantity": "50ml",
+      "kcal": "40Kcal",
+      "category": "Tarde",
+      "time": "15:00",
+      "userId": 8,
+      "id": 4
+    },
+    {
+      "foodId": null,
+      "name": "Macarrão",
+      "quantity": "100g",
+      "kcal": "100Kcal",
+      "category": "Jantar",
+      "time": "20:00",
+      "userId": 8,
+      "id": 5
+    },
+    {
+      "name": "Comida",
+      "quantity": "122",
+      "kcal": "333",
+      "category": "Manhã",
+      "time": "22:00",
+      "userId": 4,
+      "id": 6
     }
   ]
 }

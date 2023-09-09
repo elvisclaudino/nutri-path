@@ -50,7 +50,6 @@ export class DietaFormComponent
     const food = this.route.snapshot.data['food'];
 
     this.form = this.formBuilder.group({
-      foodId: [food.id],
       name: [food.name, [Validators.required]],
       quantity: [food.quantity, [Validators.required]],
       kcal: [food.kcal, [Validators.required]],
