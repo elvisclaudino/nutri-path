@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { distinctUntilChanged, empty, map, switchMap } from 'rxjs';
+import { EMPTY, distinctUntilChanged, map, switchMap } from 'rxjs';
 import Swal from 'sweetalert2';
 
 import { CepConsultService } from 'src/app/shared/services/cep-consult.service';
@@ -13,6 +13,7 @@ import { Cities } from 'src/app/shared/models/cities';
 import { States } from 'src/app/shared/models/states';
 
 import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base.component';
+import { IFormCanDeactivate } from 'src/app/guards/iform-candeactivate';
 
 @Component({
   selector: 'app-register',
@@ -20,14 +21,20 @@ import { FormBaseComponent } from 'src/app/shared/components/form-base/form-base
   styleUrls: ['./register.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterComponent extends FormBaseComponent {
+export class RegisterComponent
+  extends FormBaseComponent
+  implements IFormCanDeactivate
+{
   states!: States[];
   cities!: Cities[];
 
+  private formChanges: boolean = false;
+  private formSubmitted = false;
+
   constructor(
     private formBuilder: FormBuilder,
-    private dropdownService: DropdownService,
     private Router: Router,
+    private dropdownService: DropdownService,
     private cepConsultService: CepConsultService,
     private registerService: RegisterService
   ) {
@@ -64,7 +71,7 @@ export class RegisterComponent extends FormBaseComponent {
         switchMap((status) =>
           status === 'VALID'
             ? this.cepConsultService.cepConsult(this.form.get('cep')?.value)
-            : empty()
+            : EMPTY
         )
       )
       .subscribe((data: any) => this.populateForm(data));
@@ -73,13 +80,16 @@ export class RegisterComponent extends FormBaseComponent {
       .get('state')
       ?.valueChanges.pipe(
         map((state) => this.states.filter((e) => e.sigla === state)),
-        map((states) => (states && states.length > 0 ? states[0].id : empty())),
+        map((states) => (states && states.length > 0 ? states[0].id : EMPTY)),
         switchMap((stateId: any) => this.dropdownService.getCities(stateId))
       )
       .subscribe((data) => (this.cities = data));
+
+    this.form.valueChanges.subscribe(() => (this.formChanges = true));
   }
 
   submit() {
+    this.formSubmitted = true;
     let valueSubmit = Object.assign({}, this.form.value);
     this.registerService.userRegister(valueSubmit).subscribe(
       (res) => {
@@ -111,5 +121,32 @@ export class RegisterComponent extends FormBaseComponent {
     return this.registerService
       .verifyEmail(formControl.value)
       .pipe(map((emailExists) => (emailExists ? { emailExists: true } : null)));
+  }
+
+  canChangeRoute() {
+    if (this.formChanges && !this.formSubmitted) {
+      return new Promise<boolean>((resolve) => {
+        Swal.fire({
+          title: 'Tem certeza que deseja sair dessa página?',
+          text: 'Você perderá todos os dados preenchidos!',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Sim',
+          cancelButtonText: 'Não',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        });
+      });
+    }
+
+    return true;
+  }
+
+  canDeactivate() {
+    return this.canChangeRoute();
   }
 }

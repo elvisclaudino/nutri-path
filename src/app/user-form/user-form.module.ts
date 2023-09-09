@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
+import { FormDeactivateGuard } from '../guards/form-deactivate.guard';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, HomeComponent],
@@ -19,5 +20,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
   ],
   exports: [HomeComponent, LoginComponent, RegisterComponent],
+  providers: [FormDeactivateGuard],
 })
 export class UserFormModule {}

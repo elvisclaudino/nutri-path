@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="!emptyDiet" class="table-container rounded-6 d-flex">
-  <table class="table bg-white rounded-6">
+  <table class="table bg-white rounded-6 m-0">
     <thead>
       <tr>
         <th scope="col">Nome</th>
@@ -26,11 +26,11 @@
 </div>
 
 <div
-  class="empty-table d-flex align-items-center justify-content-center flex-column"
+  class="empty-table bg-white rounded-6 d-flex align-items-center justify-content-center flex-column"
   *ngIf="emptyDiet"
 >
   <p class="text-center fs-3 fw-bolder m-0">
-    Ainda não foi adicionado nada na dieta.
+    Ainda não foi adicionado nada na categoria {{ categoria | lowercase }}.
   </p>
   <a class="btn btn-primary" [routerLink]="['/dashboard/novo']"
     >Adicione agora</a

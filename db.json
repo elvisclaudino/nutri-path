@@ -13,7 +13,60 @@
       "state": "PR",
       "city": "Curitiba",
       "id": 4
+    },
+    {
+      "name": "asa",
+      "lastName": "asas",
+      "email": "elvisclaudino@gmail.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "30",
+      "weigth": "650",
+      "heigth": "60",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 5
+    },
+    {
+      "name": "Joao",
+      "lastName": "Carlos",
+      "email": "joao@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "44",
+      "weigth": "3434",
+      "heigth": "150",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 6
+    },
+    {
+      "name": "Elvis",
+      "lastName": "Csds",
+      "email": "jorge@edee",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "40",
+      "weigth": "55",
+      "heigth": "190",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 7
     }
   ],
-  "dieta": []
+  "dieta": [
+    {
+      "foodId": 1,
+      "name": "a",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Almoço",
+      "time": "15:08",
+      "userId": 4,
+      "id": 1
+    }
+  ]
 }

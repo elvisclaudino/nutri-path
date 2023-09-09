@@ -1,15 +1,10 @@
 <div
-  *ngIf="showButton('/dashboard/novo')"
-  class="w-100 bg-white rounded-6 p-1 px-3 my-2"
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
 >
-  <p class="m-0 fw-bolder">Editar</p>
-</div>
-
-<div
-  *ngIf="!showButton('/dashboard/novo')"
-  class="w-100 bg-white rounded-6 p-1 px-3 my-2"
->
-  <p class="m-0 fw-bolder">Adicionar</p>
+  <p class="m-0 fw-bolder">
+    {{ showButton("/dashboard/novo") ? "Editar" : "Adicionar" }}
+  </p>
+  <a class="btn btn-white btn-sm" [routerLink]="['/dashboard']">Cancelar</a>
 </div>
 
 <div class="dieta-form d-flex justify-content-center align-items-center">
@@ -92,26 +87,8 @@
       </div>
     </div>
 
-    <button
-      *ngIf="!showButton('/dashboard/novo')"
-      type="submit"
-      class="btn btn-primary btn-block"
-    >
-      Adicionar
-    </button>
-    <button
-      *ngIf="showButton('/dashboard/novo')"
-      type="submit"
-      class="btn btn-primary btn-block"
-    >
-      Editar
-    </button>
-    <button
-      *ngIf="showButton('/dashboard/novo')"
-      class="btn btn-danger btn-block"
-      (click)="onCancel()"
-    >
-      Cencelar
+    <button type="submit" class="btn btn-primary btn-block">
+      {{ showButton("/dashboard/novo") ? "Editar" : "Adicionar" }}
     </button>
   </form>
 </div>

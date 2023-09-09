@@ -4,16 +4,18 @@
 }
 
 .empty-table {
-  height: 400px;
+  height: 600px;
 }
 
 @media (max-width: 900px) {
   .table-container {
     width: 94vw;
+    margin-bottom: 10px;
     overflow-x: auto;
   }
 
   .empty-table {
     width: 94vw;
+    margin-bottom: 10px;
   }
 }

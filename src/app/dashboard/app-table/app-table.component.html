@@ -1,9 +1,14 @@
-<div class="w-100 bg-white rounded-6 p-1 px-3 my-2">
+<div
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
+>
   <p class="m-0 fw-bolder">Dieta</p>
+  <a class="btn btn-white btn-sm" [routerLink]="['/dashboard/novo']"
+    ><i class="fas fa-square-plus me-1"></i>Adicionar</a
+  >
 </div>
 
 <div *ngIf="!emptyDiet" class="table-container rounded-6 d-flex">
-  <table class="table bg-white rounded-6">
+  <table class="table bg-white rounded-6 m-0">
     <thead>
       <tr>
         <th scope="col">Nome</th>
@@ -11,13 +16,7 @@
         <th scope="col">Kcal</th>
         <th scope="col">Categoria</th>
         <th scope="col">Horário</th>
-        <th scope="col">
-          <a
-            class="btn btn-primary d-flex align-items-center justify-content-center"
-            [routerLink]="['/dashboard/novo']"
-            ><i class="fas fa-square-plus me-1"></i> Adicionar</a
-          >
-        </th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -46,7 +45,7 @@
 </div>
 
 <div
-  class="empty-table d-flex align-items-center justify-content-center flex-column"
+  class="empty-table bg-white rounded-6 d-flex align-items-center justify-content-center flex-column"
   *ngIf="emptyDiet"
 >
   <p class="text-center fs-3 fw-bolder m-0">
