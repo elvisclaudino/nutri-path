@@ -44,7 +44,12 @@
   </table>
 </div>
 
-<div *ngIf="emptyDiet">
-  <p>Ainda não foi adicionado nada na dieta.</p>
-  <a class="btn btn-outline" [routerLink]="['novo']">Adicione agora</a>
+<div
+  class="empty-table d-flex align-items-center justify-content-center flex-column"
+  *ngIf="emptyDiet"
+>
+  <p class="text-center fs-3 fw-bolder m-0">
+    Ainda não foi adicionado nada na dieta.
+  </p>
+  <a class="btn btn-primary" [routerLink]="['novo']">Adicione agora</a>
 </div>

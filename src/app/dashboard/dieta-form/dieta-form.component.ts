@@ -74,4 +74,10 @@ export class DietaFormComponent extends FormBaseComponent {
       }
     );
   }
+
+  showButton(path: string): boolean {
+    const currentRoute = this.router.url;
+
+    return currentRoute !== path;
+  }
 }

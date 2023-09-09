@@ -13,7 +13,7 @@ export class AppTableComponent {
   diet!: any[];
   emptyDiet: boolean = false;
 
-  SelectedFood!: any;
+  selectedFood!: any;
 
   constructor(
     private router: Router,
@@ -36,7 +36,7 @@ export class AppTableComponent {
   }
 
   onDelete(selectedFood: any) {
-    this.SelectedFood = selectedFood;
+    this.selectedFood = selectedFood;
 
     Swal.fire({
       title: 'Tem certeza?',
@@ -48,9 +48,14 @@ export class AppTableComponent {
       confirmButtonText: 'Sim!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.dietService.removeFoodFromDiet(this.SelectedFood.id).subscribe(
-          (success) =>
-            Swal.fire('Sucesso!', 'Item removido da dieta.', 'success'),
+        this.dietService.removeFoodFromDiet(this.selectedFood.id).subscribe(
+          (success) => {
+            Swal.fire('Sucesso!', 'Item removido da dieta.', 'success');
+            this.diet = this.diet.filter(
+              (item) => item.id !== this.selectedFood.id
+            );
+            this.emptyDiet = this.diet.length === 0;
+          },
           (error) =>
             Swal.fire('Erro!', 'Erro ao remover item da dieta.', 'error')
         );

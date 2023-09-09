@@ -78,6 +78,19 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+    <button
+      *ngIf="!showButton('/dashboard/novo')"
+      type="submit"
+      class="btn btn-primary btn-block"
+    >
+      Adicionar
+    </button>
+    <button
+      *ngIf="showButton('/dashboard/novo')"
+      type="submit"
+      class="btn btn-primary btn-block"
+    >
+      Editar
+    </button>
   </form>
 </div>

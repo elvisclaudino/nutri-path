@@ -3,9 +3,17 @@
   overflow-y: auto;
 }
 
+.empty-table {
+  height: 400px;
+}
+
 @media (max-width: 900px) {
   .table-container {
     width: 94vw;
     overflow-x: auto;
+  }
+
+  .empty-table {
+    width: 94vw;
   }
 }
