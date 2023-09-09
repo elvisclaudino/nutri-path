@@ -1,5 +1,6 @@
 [
-  { "id": 1, "nome": "Lanche" },
+  { "id": 1, "nome": "Manhã" },
   { "id": 2, "nome": "Almoço" },
-  { "id": 3, "nome": "Jantar" }
+  { "id": 3, "nome": "Tarde" },
+  { "id": 4, "nome": "Jantar" }
 ]

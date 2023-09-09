@@ -80,4 +80,9 @@ export class DietaFormComponent extends FormBaseComponent {
 
     return currentRoute !== path;
   }
+
+  onCancel() {
+    this.form.reset();
+    this.router.navigate(['/dashboard/dieta']);
+  }
 }

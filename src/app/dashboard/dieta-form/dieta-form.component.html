@@ -1,3 +1,17 @@
+<div
+  *ngIf="showButton('/dashboard/novo')"
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2"
+>
+  <p class="m-0 fw-bolder">Editar</p>
+</div>
+
+<div
+  *ngIf="!showButton('/dashboard/novo')"
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2"
+>
+  <p class="m-0 fw-bolder">Adicionar</p>
+</div>
+
 <div class="dieta-form d-flex justify-content-center align-items-center">
   <form
     class="cold-md-10 p-5 bg-white rounded-6"
@@ -91,6 +105,13 @@
       class="btn btn-primary btn-block"
     >
       Editar
+    </button>
+    <button
+      *ngIf="showButton('/dashboard/novo')"
+      class="btn btn-danger btn-block"
+      (click)="onCancel()"
+    >
+      Cencelar
     </button>
   </form>
 </div>

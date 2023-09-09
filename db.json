@@ -15,16 +15,5 @@
       "id": 4
     }
   ],
-  "dieta": [
-    {
-      "foodId": 1,
-      "name": "Elvis",
-      "quantity": "300g",
-      "kcal": "80Kcal",
-      "category": "Almoço",
-      "time": "11:35",
-      "userId": 4,
-      "id": 1
-    }
-  ]
+  "dieta": []
 }

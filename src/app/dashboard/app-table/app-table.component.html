@@ -1,4 +1,8 @@
-<div *ngIf="!emptyDiet" class="table-container rounded-6">
+<div class="w-100 bg-white rounded-6 p-1 px-3 my-2">
+  <p class="m-0 fw-bolder">Dieta</p>
+</div>
+
+<div *ngIf="!emptyDiet" class="table-container rounded-6 d-flex">
   <table class="table bg-white rounded-6">
     <thead>
       <tr>
@@ -8,7 +12,9 @@
         <th scope="col">Categoria</th>
         <th scope="col">Horário</th>
         <th scope="col">
-          <a class="btn btn-primary d-flex" [routerLink]="['/dashboard/novo']"
+          <a
+            class="btn btn-primary d-flex align-items-center justify-content-center"
+            [routerLink]="['/dashboard/novo']"
             ><i class="fas fa-square-plus me-1"></i> Adicionar</a
           >
         </th>
@@ -24,17 +30,12 @@
         <td>
           <span class="d-flex">
             <button
-              type="button"
-              class="btn btn-primary me-2"
+              class="btn btn-sm btn-primary me-2"
               (click)="onEdit(food.id)"
             >
               <i class="fas fa-pen"></i>
             </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              (click)="onDelete(food)"
-            >
+            <button class="btn btn-sm btn-danger" (click)="onDelete(food)">
               <i class="fas fa-trash-can"></i>
             </button>
           </span>
@@ -51,5 +52,7 @@
   <p class="text-center fs-3 fw-bolder m-0">
     Ainda não foi adicionado nada na dieta.
   </p>
-  <a class="btn btn-primary" [routerLink]="['novo']">Adicione agora</a>
+  <a class="btn btn-primary" [routerLink]="['/dashboard/novo']"
+    >Adicione agora</a
+  >
 </div>
