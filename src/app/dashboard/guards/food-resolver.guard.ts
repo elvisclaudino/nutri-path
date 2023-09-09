@@ -26,7 +26,7 @@ export class FoodResolverGuard implements Resolve<any> {
       nome: null,
       quantity: null,
       kcal: null,
-      catehory: null,
+      category: null,
       time: null,
     });
   }

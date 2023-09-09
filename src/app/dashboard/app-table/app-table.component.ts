@@ -15,11 +15,7 @@ export class AppTableComponent {
 
   selectedFood!: any;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private dietService: DietService
-  ) {}
+  constructor(private router: Router, private dietService: DietService) {}
 
   ngOnInit(): void {
     this.dietService.getDietSortedByTime().subscribe((data) => {
