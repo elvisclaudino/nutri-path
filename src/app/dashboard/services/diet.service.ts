@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, map, take } from 'rxjs';
 
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -12,8 +12,27 @@ export class DietService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
+  loadById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(take(1));
+  }
+
   addFoodToDiet(food: any) {
-    return this.http.post(this.apiUrl, food);
+    return this.http.post(this.apiUrl, food).pipe(take(1));
+  }
+
+  updateFoodOnDiet(food: any) {
+    return this.http.put(`${this.apiUrl}/${food.foodId}`, food).pipe(take(1));
+  }
+
+  save(food: any) {
+    if (food.foodId) {
+      return this.updateFoodOnDiet(food);
+    }
+    return this.addFoodToDiet(food);
+  }
+
+  removeFoodFromDiet(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`).pipe(take(1));
   }
 
   getDietSortedByTime(): Observable<any[]> {

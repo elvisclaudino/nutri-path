@@ -44,15 +44,6 @@
       "id": 3
     },
     {
-      "name": "Elvis",
-      "quantity": "300g",
-      "kcal": "100kcal",
-      "category": "Lanche",
-      "time": "22:00",
-      "userId": 2,
-      "id": 4
-    },
-    {
       "name": "2 Fatias de pão integral",
       "quantity": "50g",
       "kcal": "125kcal",
@@ -78,24 +69,6 @@
       "time": "10:00",
       "userId": 4,
       "id": 7
-    },
-    {
-      "name": "folhas verdes e legumes",
-      "quantity": "À vontade",
-      "kcal": "0Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 8
-    },
-    {
-      "name": "Arroz",
-      "quantity": "45g",
-      "kcal": "58Kcal",
-      "category": "Almoço",
-      "time": "00:00",
-      "userId": 4,
-      "id": 9
     },
     {
       "name": "Batata cozida ~ Opcional",
@@ -186,6 +159,46 @@
       "time": "14:21",
       "userId": 4,
       "id": 19
+    },
+    {
+      "foodId": 8,
+      "name": "Elvis",
+      "quantity": "300g",
+      "kcal": "100kcal",
+      "category": "Almoço",
+      "time": "14:33",
+      "userId": 4,
+      "id": 20
+    },
+    {
+      "foodId": 8,
+      "name": "folhas verdes e legumes",
+      "quantity": "À vontade",
+      "kcal": "300Kcal",
+      "category": "Almoço",
+      "time": "00:00",
+      "userId": 4,
+      "id": 21
+    },
+    {
+      "foodId": 8,
+      "name": "folhas verdes e legumes",
+      "quantity": "À vontade",
+      "kcal": "700Kcal",
+      "category": "Almoço",
+      "time": "00:00",
+      "userId": 4,
+      "id": 22
+    },
+    {
+      "foodId": null,
+      "name": "Elvis",
+      "quantity": "200ml",
+      "kcal": "10000000Kcal",
+      "category": "Lanche",
+      "time": "02:12",
+      "userId": 4,
+      "id": 23
     }
   ]
 }
