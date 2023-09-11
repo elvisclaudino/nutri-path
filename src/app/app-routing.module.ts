@@ -23,6 +23,13 @@ const routes: Routes = [
     canLoad: [AuthGuard],
   },
   {
+    path: 'search',
+    loadChildren: () =>
+      import('./search/search.module').then((m) => m.SearchModule),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
