@@ -1,0 +1,57 @@
+[
+  { "id": 1, "nome": "Arroz branco", "porcao": "70g", "kcal": "245Kcal" },
+  { "id": 2, "nome": "Arroz integral", "porcao": "70g", "kcal": "246Kcal" },
+  { "id": 3, "nome": "Achocolatado", "porcao": "200ml", "kcal": "264Kcal" },
+  { "id": 4, "nome": "Creme de leite", "porcao": "30g", "kcal": "92Kcal" },
+  { "id": 5, "nome": "Danoninho", "porcao": "40g", "kcal": "39Kcal" },
+  { "id": 6, "nome": "Leite", "porcao": "200ml", "kcal": "130Kcal" },
+  { "id": 7, "nome": "Café com leite", "porcao": "240ml", "kcal": "80Kcal" },
+  { "id": 8, "nome": "Leite condensado", "porcao": "7,5ml", "kcal": "10Kcal" },
+  { "id": 9, "nome": "Leite em pó", "porcao": "6,5g", "kcal": "31Kcal" },
+  { "id": 10, "nome": "Yakult", "porcao": "80ml", "kcal": "54Kcal" },
+  { "id": 11, "nome": "Arroz doce", "porcao": "150g", "kcal": "141Kcal" },
+  { "id": 12, "nome": "Brigadeiro", "porcao": "27g", "kcal": "32Kcal" },
+  { "id": 13, "nome": "Doce de leite", "porcao": "15g", "kcal": "47Kcal" },
+  {
+    "id": 14,
+    "nome": "Pudim de chocolate",
+    "porcao": "150g",
+    "kcal": "142Kcal"
+  },
+  { "id": 15, "nome": "Amendoim torrado", "porcao": "30g", "kcal": "191Kcal" },
+  { "id": 16, "nome": "Batata palha", "porcao": "35g", "kcal": "200Kcal" },
+  {
+    "id": 17,
+    "nome": "Biscoito água e sal",
+    "porcao": "35g",
+    "kcal": "185Kcal"
+  },
+  { "id": 17, "nome": "Chips", "porcao": "28g", "kcal": "66Kcal" },
+  { "id": 18, "nome": "Clube Social", "porcao": "24g", "kcal": "106Kcal" },
+  { "id": 19, "nome": "Cream cracker", "porcao": "15g", "kcal": "66Kcal" },
+  { "id": 20, "nome": "Doritos", "porcao": "28h", "kcal": "145Kcal" },
+  { "id": 21, "nome": "Pipoca", "porcao": "50g", "kcal": "192Kcal" },
+  { "id": 22, "nome": "Carne bovina", "porcao": "170g", "kcal": "265Kcal" },
+  { "id": 23, "nome": "Carne de carneiro", "porcao": "86g", "kcal": "157Kcal" },
+  {
+    "id": 24,
+    "nome": "Carne de hamburguer",
+    "porcao": "150g",
+    "kcal": "164Kcal"
+  },
+  { "id": 25, "nome": "Carne moida", "porcao": "113g", "kcal": "235Kcal" },
+  { "id": 26, "nome": "Carne de coelho", "porcao": "85g", "kcal": "174Kcal" },
+  { "id": 27, "nome": "Coxa de frango", "porcao": "193g", "kcal": "335Kcal" },
+  {
+    "id": 28,
+    "nome": "Filé de peito de frango",
+    "porcao": "112g",
+    "kcal": "132Kcal"
+  },
+  {
+    "id": 29,
+    "nome": "Frango a passarinho",
+    "porcao": "100g",
+    "kcal": "174Kcal"
+  }
+]
