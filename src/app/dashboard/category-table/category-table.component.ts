@@ -34,9 +34,12 @@ export class CategoryTableComponent {
 
   calculateTotalCalories(): number {
     let totalCalories = 0;
-    for (let food of this.diet) {
-      totalCalories += parseFloat(food.kcal);
+    if (Array.isArray(this.diet)) {
+      for (let food of this.diet) {
+        totalCalories += parseFloat(food.kcal);
+      }
     }
+
     return totalCalories;
   }
 }
