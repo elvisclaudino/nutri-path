@@ -159,18 +159,8 @@
       "id": 9
     },
     {
-      "foodId": null,
+      "foodId": 11,
       "name": "Elvis",
-      "quantity": "300g",
-      "kcal": "100kcal",
-      "category": "Almoço",
-      "time": "22:00",
-      "userId": 4,
-      "id": 10
-    },
-    {
-      "foodId": null,
-      "name": "Elvis Maicon Claudino",
       "quantity": "200ml",
       "kcal": "200",
       "category": "Jantar",
