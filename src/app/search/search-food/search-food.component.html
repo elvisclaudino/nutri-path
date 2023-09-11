@@ -1,0 +1,35 @@
+<div class="search d-flex justify-content-center align-items-center">
+  <div
+    class="container d-flex justify-content-center align-items-center dashboard-content flex-column"
+  >
+    <div
+      class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
+    >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Pesquisar alimentos"
+        [formControl]="searchField"
+      />
+    </div>
+
+    <div class="table-container rounded-6 d-flex w-100">
+      <table class="table bg-white rounded-6 m-0 w-100">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Porção</th>
+            <th scope="col">Kcal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of foods$ | async">
+            <td>{{ result.nome }}</td>
+            <td>{{ result.porcao }}</td>
+            <td>{{ result.kcal }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

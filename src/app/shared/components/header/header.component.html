@@ -23,7 +23,10 @@
     <div class="collapse navbar-collapse" id="navbarButtonsExample">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li *ngIf="isLoggedIn" class="nav-item">
-          <a class="nav-link" [routerLink]="['/dashboard']">Home</a>
+          <a class="nav-link" [routerLink]="['/dashboard']">Dieta</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['/search']">Pesquisa</a>
         </li>
       </ul>
 
