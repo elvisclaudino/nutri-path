@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
 
 import { DietService } from '../services/diet.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-app-table',
@@ -61,9 +62,12 @@ export class AppTableComponent {
 
   calculateTotalCalories(): number {
     let totalCalories = 0;
-    for (let food of this.diet) {
-      totalCalories += parseFloat(food.kcal);
+    if (Array.isArray(this.diet)) {
+      for (let food of this.diet) {
+        totalCalories += parseFloat(food.kcal);
+      }
     }
+
     return totalCalories;
   }
 }

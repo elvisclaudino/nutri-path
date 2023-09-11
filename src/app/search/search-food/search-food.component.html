@@ -2,16 +2,10 @@
   <div
     class="container d-flex justify-content-center align-items-center dashboard-content flex-column"
   >
-    <div
-      class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
-    >
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Pesquisar alimentos"
-        [formControl]="searchField"
-      />
-    </div>
+    <app-search-input
+      class="w-100"
+      (searchTextChanged)="onSearchTextChanged($event)"
+    ></app-search-input>
 
     <div class="table-container rounded-6 d-flex w-100">
       <table class="table bg-white rounded-6 m-0 w-100">

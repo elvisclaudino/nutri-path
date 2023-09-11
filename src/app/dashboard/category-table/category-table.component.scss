@@ -19,3 +19,9 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 500px) {
+  .diet-info {
+    flex-direction: column;
+  }
+}

@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { EMPTY, distinctUntilChanged, map, switchMap } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -19,7 +19,6 @@ import { IFormCanDeactivate } from 'src/app/guards/iform-candeactivate';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterComponent
   extends FormBaseComponent
