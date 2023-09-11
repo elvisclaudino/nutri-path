@@ -1,10 +1,9 @@
-<div
-  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
->
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Pesquisar alimentos"
+<div class="col-md-12 mb-2">
+  <app-input-field
+    id="searchField"
+    placeholder="Pesquisar por alimentos..."
     [formControl]="searchField"
-  />
+    [control]="'searchField'"
+    label="Pesquisar"
+  ></app-input-field>
 </div>

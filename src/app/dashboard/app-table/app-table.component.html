@@ -1,8 +1,8 @@
 <div
-  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between"
+  class="w-100 bg-white rounded-6 p-1 px-3 my-2 d-flex justify-content-between diet-info"
 >
-  <p class="m-0 fw-bolder">Dieta</p>
-  <p *ngIf="!emptyDiet" class="m-0 fw-bold">
+  <p class="m-0 fw-bolder text-center">Dieta</p>
+  <p *ngIf="!emptyDiet" class="m-0 fw-bold text-center">
     Total > {{ calculateTotalCalories() }}Kcal
   </p>
   <a class="btn btn-white btn-sm" [routerLink]="['/dashboard/novo']"

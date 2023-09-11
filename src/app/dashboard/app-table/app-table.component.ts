@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import Swal from 'sweetalert2';
 
 import { DietService } from '../services/diet.service';
-import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-app-table',
