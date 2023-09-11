@@ -9,6 +9,7 @@ import {
   distinctUntilChanged,
   switchMap,
   tap,
+  startWith,
 } from 'rxjs';
 import { Foods } from 'src/app/shared/models/foods';
 import { FoodSearchService } from 'src/app/shared/services/food-search.service';
@@ -26,19 +27,12 @@ export class SearchFoodComponent {
 
   ngOnInit(): void {
     this.foods$ = this.searchField.valueChanges.pipe(
+      startWith(''),
       map((value) => value.trim()),
       debounceTime(200),
       distinctUntilChanged(),
       switchMap((searchTerm) =>
-        this.foodSearchService
-          .getFoods()
-          .pipe(
-            map((foods) =>
-              foods.filter((food) =>
-                food.nome.toLowerCase().includes(searchTerm.toLowerCase())
-              )
-            )
-          )
+        this.foodSearchService.getFoodsSearch(searchTerm)
       )
     );
   }
