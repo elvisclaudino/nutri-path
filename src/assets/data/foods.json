@@ -53,5 +53,131 @@
     "nome": "Frango a passarinho",
     "porcao": "100g",
     "kcal": "174Kcal"
+  },
+  {
+    "id": 30,
+    "nome": "Feijão cozido",
+    "porcao": "100g",
+    "kcal": "80Kcal"
+  },
+  {
+    "id": 31,
+    "nome": "Salmão grelhado",
+    "porcao": "100g",
+    "kcal": "206Kcal"
+  },
+  {
+    "id": 32,
+    "nome": "Massa cozida",
+    "porcao": "100g",
+    "kcal": "170Kcal"
+  },
+  {
+    "id": 34,
+    "nome": "Batata cozida",
+    "porcao": "150g",
+    "kcal": "130Kcal"
+  },
+  {
+    "id": 35,
+    "nome": "Ovo cozido",
+    "porcao": "50g",
+    "kcal": "70Kcal"
+  },
+  {
+    "id": 35,
+    "nome": "Banana",
+    "porcao": "120g",
+    "kcal": "105Kcal"
+  },
+  {
+    "id": 36,
+    "nome": "Maçã",
+    "porcao": "182g",
+    "kcal": "95Kcal"
+  },
+  {
+    "id": 37,
+    "nome": "Abacate",
+    "porcao": "100g",
+    "kcal": "120Kcal"
+  },
+  {
+    "id": 38,
+    "nome": "Queijo cheddar",
+    "porcao": "30g",
+    "kcal": "110Kcal"
+  },
+  {
+    "id": 39,
+    "nome": "Azeite de oliva",
+    "porcao": "14g",
+    "kcal": "120Kcal"
+  },
+  {
+    "id": 40,
+    "nome": "Pão branco",
+    "porcao": "25g",
+    "kcal": "80Kcal"
+  },
+  {
+    "id": 41,
+    "nome": "Aveia",
+    "porcao": "40g",
+    "kcal": "150Kcal"
+  },
+  {
+    "id": 42,
+    "nome": "Abacaxi",
+    "porcao": "112g",
+    "kcal": "42Kcal"
+  },
+  {
+    "id": 43,
+    "nome": "Morango",
+    "porcao": "150g",
+    "kcal": "50Kcal"
+  },
+  {
+    "id": 44,
+    "nome": "Batata frita",
+    "porcao": "15g",
+    "kcal": "75Kcal"
+  },
+  {
+    "id": 45,
+    "nome": "Chocolate amargo",
+    "porcao": "30g",
+    "kcal": "150Kcal"
+  },
+  {
+    "id": 46,
+    "nome": "Chocolate",
+    "porcao": "150g",
+    "kcal": "170Kcal"
+  },
+  {
+    "id": 47,
+    "nome": "Pasta de amendoim",
+    "porcao": "32g",
+    "kcal": "180Kcal"
+  },
+  {
+    "id": 48,
+    "nome": "Melancia",
+    "porcao": "280g",
+    "kcal": "86Kcal"
+  },
+  {
+    "id": 49,
+    "nome": "Mel",
+    "porcao": "21g",
+    "kcal": "64Kcal"
+  },
+  {
+    "id": 50,
+    "nome": "Peito de peru",
+    "porcao": "28g",
+    "kcal": "22Kcal"
   }
 ]
