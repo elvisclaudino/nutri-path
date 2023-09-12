@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, tap } from 'rxjs';
+import { User } from 'src/app/shared/models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,22 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  userLogin(email: string, password: string): Observable<any> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
-      map((dados) => {
-        const user = dados.find((user: any) => {
+  userLogin(email: string, password: string): Observable<User | null> {
+    return this.http.get<User[]>(this.apiUrl).pipe(
+      map((dados: User[]) => {
+        const user = dados.find((user: User) => {
           return user.email === email && user.password === password;
         });
-        return user || null;
+
+        if (!user) {
+          throw new Error('Usuário não encontrado');
+        }
+
+        return user;
       }),
       catchError((error) => {
         console.error('Erro ao fazer login: ', error);
-        return error;
+        throw error;
       })
     );
   }

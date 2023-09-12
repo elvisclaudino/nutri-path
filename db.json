@@ -13,7 +13,42 @@
       "state": "PR",
       "city": "Curitiba",
       "id": 4
+    },
+    {
+      "name": "elvis",
+      "lastName": "claudino",
+      "email": "elvis@email.com",
+      "password": "El@@2019",
+      "confirmPassword": "El@@2019",
+      "age": "19",
+      "weigth": "74",
+      "heigth": "180",
+      "cep": "83190-000",
+      "state": "PR",
+      "city": "Tijucas do Sul",
+      "id": 5
     }
   ],
-  "dieta": []
+  "dieta": [
+    {
+      "foodId": null,
+      "name": "Café ",
+      "quantity": "120ml",
+      "kcal": "80",
+      "category": "Manhã",
+      "time": "08:00",
+      "userId": 5,
+      "id": 1
+    },
+    {
+      "foodId": 0,
+      "name": "Elvis",
+      "quantity": "300g",
+      "kcal": "80Kcal",
+      "category": "Manhã",
+      "time": "15:18",
+      "userId": 4,
+      "id": 2
+    }
+  ]
 }

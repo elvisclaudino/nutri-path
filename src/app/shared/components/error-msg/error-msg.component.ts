@@ -9,7 +9,7 @@ import { FormValidators } from '../../form-validators';
 })
 export class ErrorMsgComponent {
   @Input() control!: FormControl;
-  @Input() label!: any;
+  @Input() label!: string;
 
   get errorMsg() {
     for (let propertyName in this.control.errors) {

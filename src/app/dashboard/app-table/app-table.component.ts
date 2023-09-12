@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 import { DietService } from '../services/diet.service';
+import { Foods } from 'src/app/shared/models/foods';
 
 @Component({
   selector: 'app-app-table',
@@ -11,10 +12,10 @@ import { DietService } from '../services/diet.service';
   styleUrls: ['./app-table.component.scss'],
 })
 export class AppTableComponent {
-  diet!: any[];
-  emptyDiet: boolean = false;
+  public emptyDiet: boolean = false;
+  public selectedFood!: Foods;
 
-  selectedFood!: any;
+  public diet!: Foods[];
 
   constructor(private router: Router, private dietService: DietService) {}
 
@@ -32,7 +33,7 @@ export class AppTableComponent {
     this.router.navigate(['dashboard/editar', id]);
   }
 
-  onDelete(selectedFood: any) {
+  onDelete(selectedFood: Foods) {
     this.selectedFood = selectedFood;
 
     Swal.fire({

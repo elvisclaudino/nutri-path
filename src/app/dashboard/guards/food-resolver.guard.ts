@@ -7,27 +7,30 @@ import {
 import { Observable, of } from 'rxjs';
 
 import { DietService } from './../services/diet.service';
+import { Foods } from 'src/app/shared/models/foods';
 
 @Injectable({
   providedIn: 'root',
 })
-export class FoodResolverGuard implements Resolve<any> {
+export class FoodResolverGuard implements Resolve<Foods> {
   constructor(private dietService: DietService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): any | Observable<any> | Promise<any> | Observable<any> {
+  ): Foods | Observable<Foods> | Promise<Foods> {
     if (route.params && route.params['id']) {
       return this.dietService.loadById(route.params['id']);
     }
 
     return of({
-      id: null,
-      nome: null,
-      quantity: null,
-      kcal: null,
-      category: null,
-      time: null,
+      id: 0,
+      name: '',
+      quantity: '',
+      kcal: '',
+      time: '',
+      category: '',
+      foodId: 0,
+      userId: 0,
     });
   }
 }

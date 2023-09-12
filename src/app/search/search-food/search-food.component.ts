@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Foods } from 'src/app/shared/models/foods';
+import { foodSearch } from 'src/app/shared/models/foodSearch';
+
 import { FoodSearchService } from 'src/app/shared/services/food-search.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { FoodSearchService } from 'src/app/shared/services/food-search.service';
   styleUrls: ['./search-food.component.scss'],
 })
 export class SearchFoodComponent {
-  foods$!: Observable<Foods[]>;
+  foods$!: Observable<foodSearch[]>;
 
   constructor(private foodSearchService: FoodSearchService) {}
 

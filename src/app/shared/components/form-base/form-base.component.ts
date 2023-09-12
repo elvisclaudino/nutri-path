@@ -8,9 +8,9 @@ import { FormArray, FormGroup } from '@angular/forms';
 export abstract class FormBaseComponent {
   form!: FormGroup;
 
-  abstract submit(): any;
+  abstract submit(): void;
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.form.valid) {
       this.submit();
     } else {
@@ -18,8 +18,8 @@ export abstract class FormBaseComponent {
     }
   }
 
-  verifyFormValidations(formGroup: FormGroup | FormArray) {
-    Object.keys(formGroup.controls).forEach((campo: any) => {
+  verifyFormValidations(formGroup: FormGroup | FormArray): void {
+    Object.keys(formGroup.controls).forEach((campo: string) => {
       const controle = formGroup.get(campo);
       controle?.markAsDirty();
       controle?.markAsTouched();
@@ -30,21 +30,21 @@ export abstract class FormBaseComponent {
     });
   }
 
-  resetar() {
+  resetar(): void {
     this.form.reset();
   }
 
-  verifyValidTouched(campo: any) {
-    return (
-      !this.form.get(campo)?.valid &&
-      (!!this.form.get(campo)?.touched || this.form.get(campo)?.dirty)
-    );
+  verifyValidTouched(campo: string): boolean {
+    const control = this.form.get(campo);
+    return !!control && control.invalid && (control.touched || control.dirty);
   }
 
-  verifyRequired(campo: any) {
+  verifyRequired(campo: string): boolean {
+    const control = this.form.get(campo);
     return (
-      this.form.get(campo)?.hasError('required') &&
-      (!!this.form.get(campo)?.touched || this.form.get(campo)?.dirty)
+      !!control &&
+      control.hasError('required') &&
+      (control.touched || control.dirty)
     );
   }
 }

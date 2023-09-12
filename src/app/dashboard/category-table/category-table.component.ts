@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { DietService } from '../services/diet.service';
+import { Foods } from 'src/app/shared/models/foods';
 
 @Component({
   selector: 'app-category-table',
@@ -9,9 +10,10 @@ import { DietService } from '../services/diet.service';
   styleUrls: ['./category-table.component.scss'],
 })
 export class CategoryTableComponent {
-  categoria!: string;
-  diet!: any[];
-  emptyDiet: boolean = false;
+  public categoria!: string;
+  public emptyDiet: boolean = false;
+
+  public diet!: Foods[];
 
   constructor(
     private activatedRoute: ActivatedRoute,

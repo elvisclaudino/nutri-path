@@ -1,6 +1,10 @@
 export interface Foods {
-  id: number;
-  nome: string;
-  porcao: string;
+  name: string;
+  quantity: string;
   kcal: string;
+  time: string;
+  category: string;
+  foodId: number;
+  userId: number;
+  id: number;
 }

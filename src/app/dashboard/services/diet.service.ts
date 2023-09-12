@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, take } from 'rxjs';
+import { Foods } from 'src/app/shared/models/foods';
 
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -12,19 +13,19 @@ export class DietService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  loadById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(take(1));
+  loadById(id: number): Observable<Foods> {
+    return this.http.get<Foods>(`${this.apiUrl}/${id}`).pipe(take(1));
   }
 
-  addFoodToDiet(food: any) {
+  addFoodToDiet(food: Foods) {
     return this.http.post(this.apiUrl, food).pipe(take(1));
   }
 
-  updateFoodOnDiet(food: any) {
+  updateFoodOnDiet(food: Foods) {
     return this.http.put(`${this.apiUrl}/${food.foodId}`, food).pipe(take(1));
   }
 
-  save(food: any) {
+  save(food: Foods) {
     if (food.foodId) {
       return this.updateFoodOnDiet(food);
     }
@@ -35,8 +36,8 @@ export class DietService {
     return this.http.delete(`${this.apiUrl}/${id}`).pipe(take(1));
   }
 
-  getDietSortedByTime(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+  getDietSortedByTime(): Observable<Foods[]> {
+    return this.http.get<Foods[]>(this.apiUrl).pipe(
       map((diet) =>
         diet
           .filter((food) => food.userId === this.authService.getUserId())
@@ -47,8 +48,8 @@ export class DietService {
     );
   }
 
-  getDietSortByCategory(categoria: string): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+  getDietSortByCategory(categoria: string): Observable<Foods[]> {
+    return this.http.get<Foods[]>(this.apiUrl).pipe(
       map((diet) =>
         diet.filter((food) => {
           return (

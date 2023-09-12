@@ -20,7 +20,7 @@
             id="name"
             placeholder="Nome do alimento"
             formControlName="name"
-            [control]="$any(form.get('name'))"
+            [control]="form.get('name')"
             label="Nome"
           ></app-input-field>
         </div>
@@ -30,7 +30,7 @@
             id="quantity"
             placeholder="Porção"
             formControlName="quantity"
-            [control]="$any(form.get('quantity'))"
+            [control]="form.get('quantity')"
             label="Quantidade"
           ></app-input-field>
         </div>
@@ -40,7 +40,7 @@
             id="kcal"
             placeholder="Calorias"
             formControlName="kcal"
-            [control]="$any(form.get('kcal'))"
+            [control]="form.get('kcal')"
             label="Calorias"
           ></app-input-field>
         </div>
@@ -80,7 +80,7 @@
             id="time"
             placeholder="Horário"
             formControlName="time"
-            [control]="$any(form.get('time'))"
+            [control]="form.get('time')"
             label="Horário"
           ></app-input-field>
         </div>

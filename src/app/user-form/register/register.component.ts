@@ -24,8 +24,8 @@ export class RegisterComponent
   extends FormBaseComponent
   implements IFormCanDeactivate
 {
-  states!: States[];
-  cities!: Cities[];
+  public states!: States[];
+  public cities!: Cities[];
 
   private formChanges: boolean = false;
   private formSubmitted = false;
@@ -41,7 +41,9 @@ export class RegisterComponent
   }
 
   ngOnInit(): void {
-    this.dropdownService.getStates().subscribe((data) => (this.states = data));
+    this.dropdownService
+      .getStates()
+      .subscribe((data: States[]) => (this.states = data));
 
     this.form = this.formBuilder.group({
       name: [null, [Validators.required]],
@@ -78,11 +80,13 @@ export class RegisterComponent
     this.form
       .get('state')
       ?.valueChanges.pipe(
-        map((state) => this.states.filter((e) => e.sigla === state)),
-        map((states) => (states && states.length > 0 ? states[0].id : EMPTY)),
+        map((state: string) => this.states.filter((e) => e.sigla === state)),
+        map((states: States[]) =>
+          states && states.length > 0 ? states[0].id : EMPTY
+        ),
         switchMap((stateId: any) => this.dropdownService.getCities(stateId))
       )
-      .subscribe((data) => (this.cities = data));
+      .subscribe((data: Cities[]) => (this.cities = data));
 
     this.form.valueChanges.subscribe(() => (this.formChanges = true));
   }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, delay, map, tap } from 'rxjs';
+import { User } from 'src/app/shared/models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +11,14 @@ export class RegisterService {
 
   constructor(private http: HttpClient) {}
 
-  userRegister(usuario: any): Observable<any> {
-    return this.http.post(this.apiUrl, usuario);
+  userRegister(usuario: User): Observable<User | null> {
+    return this.http.post<User>(this.apiUrl, usuario);
   }
 
   verifyEmail(email: string): Observable<boolean> {
-    return this.http.get<any>('http://localhost:3000/users').pipe(
+    return this.http.get<User[]>('http://localhost:3000/users').pipe(
       delay(2000),
-      map((dados: any[]) => dados.some((user) => user.email === email))
+      map((dados: User[]) => dados.some((user) => user.email === email))
     );
   }
 }

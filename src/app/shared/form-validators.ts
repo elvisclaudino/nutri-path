@@ -1,7 +1,7 @@
 import { FormControl, FormGroup } from '@angular/forms';
 
 export class FormValidators {
-  static cepValidator(control: FormControl) {
+  static cepValidator(control: FormControl): { [key: string]: any } | null {
     const cep = control.value;
     if (cep && cep !== '') {
       const cepPattern = /^\d{5}-\d{3}$/;
@@ -11,7 +11,9 @@ export class FormValidators {
     return null;
   }
 
-  static passwordValidator(control: FormControl) {
+  static passwordValidator(
+    control: FormControl
+  ): { [key: string]: any } | null {
     const password = control.value;
     if (password && password !== '') {
       const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
@@ -47,7 +49,7 @@ export class FormValidators {
     validatorName: string,
     validatorValue: any
   ) {
-    const config: any = {
+    const config: { [key: string]: string } = {
       required: `${fieldName} é obrigatório.`,
       email: 'Email inválido.',
       invalidPassword:

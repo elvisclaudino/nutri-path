@@ -19,7 +19,7 @@
           id="email"
           placeholder="Email"
           formControlName="email"
-          [control]="$any(form.get('email'))"
+          [control]="form.get('email')"
           label="Email"
         ></app-input-field>
       </div>
@@ -30,7 +30,7 @@
           id="password"
           placeholder="Senha"
           formControlName="password"
-          [control]="$any(form.get('password'))"
+          [control]="form.get('password')"
           label="Senha"
         ></app-input-field>
       </div>
